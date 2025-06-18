@@ -163,7 +163,7 @@ a:focus {
   position: absolute;
   border-radius: 50%;
   will-change: transform;
-  opacity: 0;
+  opacity: 0.1;
 }
 
 .parallax-bg-1 {
@@ -2254,6 +2254,9 @@ a:focus {
     gap: var(--spacing-sm);
   }
 
+  .parallax-element {
+    opacity: 0.01;
+  }
   .btn {
     width: 100%;
     max-width: 280px;
@@ -2380,7 +2383,7 @@ a:focus {
   }
 
   .footer-logo{
-    margin-left: 6em;
+    margin-left: 4em;
   }
 }
 
@@ -2490,10 +2493,6 @@ a:focus {
 }
 
 /* Scrollbar Styling */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--bg-color-alt);
-}
 
 *::-webkit-scrollbar {
   width: 8px;
