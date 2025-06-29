@@ -87,7 +87,7 @@ portfolio/
 
 ### Prerequisites
 - Modern web browser (Chrome, Firefox, Safari, Edge)
-- Text editor (VS Code, Sublime Text, etc.)
+- Text editor (VS Code)
 - Basic knowledge of HTML, CSS, and JavaScript
 
 ### Installation
