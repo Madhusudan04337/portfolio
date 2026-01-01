@@ -48,29 +48,33 @@ export function Skills() {
   useEffect(() => {
     if (!sectionRef.current) return
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
+
     const ctx = gsap.context(() => {
       gsap.from(".skills-header", {
-        y: 50,
+        y: isMobile ? 20 : 50,
         opacity: 0,
-        duration: 1,
-        ease: "power3.out",
+        duration: isMobile ? 0.6 : 1,
+        ease: "power2.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 85%",
           toggleActions: "play none none reverse",
+          once: true, // Performance: only play once
         },
       })
 
       if (islandRef.current) {
         gsap.from(islandRef.current, {
-          scale: 0.95,
+          scale: isMobile ? 0.98 : 0.95,
           opacity: 0,
-          duration: 1.2,
-          ease: "expo.out",
+          duration: isMobile ? 0.7 : 1.2,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 60%",
+            start: "top 75%",
             toggleActions: "play none none reverse",
+            once: true, // Performance: only play once
           },
         })
       }

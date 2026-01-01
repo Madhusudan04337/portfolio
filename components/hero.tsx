@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useEffect, useRef } from "react"
-import { Github, Linkedin, Twitter, Instagram, Download, ArrowRight } from "lucide-react"
+import { Github, Linkedin, Download, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { memo, useMemo } from "react"
 import gsap from "gsap"
@@ -12,9 +12,9 @@ const PROFILE_IMAGE = {
   src: "/images/Profile.png",
   alt: "Madhusudan's Profile Picture",
   sizes: {
-    mobile: { width: 200, height: 200, breakpoint: "max-width: 768px" }, // w-48 h-48
-    tablet: { width: 240, height: 240, breakpoint: "max-width: 1024px" }, // md:w-56 md:h-56
-    desktop: { width: 320, height: 320, breakpoint: "min-width: 1025px" }, // lg:w-80 lg:h-80
+    mobile: { width: 140, height: 140, breakpoint: "max-width: 768px" }, // Reduced from 200x200
+    tablet: { width: 220, height: 220, breakpoint: "max-width: 1024px" },
+    desktop: { width: 300, height: 300, breakpoint: "min-width: 1025px" },
   },
   // Fallback dimensions for error cases
   fallback: { width: 200, height: 200 },
@@ -62,18 +62,6 @@ const SOCIAL_LINKS = [
     icon: Linkedin,
     label: "LinkedIn Profile",
     isExternal: true,
-  },
-  {
-    href: "#",
-    icon: Twitter,
-    label: "Twitter Profile",
-    isExternal: false,
-  },
-  {
-    href: "#",
-    icon: Instagram,
-    label: "Instagram Profile",
-    isExternal: false,
   },
 ] as const
 
@@ -147,9 +135,9 @@ const ProfileImage = memo(() => {
   const maskId = useMemo(() => generateUniqueId("blobMask"), [])
 
   return (
-    <div className="relative hidden lg:flex lg:justify-center lg:items-center">
+    <div className="relative hidden min-[820px]:flex justify-center items-center lg:mt-0 mt-8">
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 opacity-20 lg:opacity-30 pointer-events-none"
         style={{
           backgroundImage: `
           linear-gradient(0deg, transparent 24%, rgba(148, 0, 211, .1) 25%, rgba(148, 0, 211, .1) 26%, transparent 27%, transparent 74%, rgba(148, 0, 211, .1) 75%, rgba(148, 0, 211, .1) 76%, transparent 77%, transparent),
@@ -190,13 +178,13 @@ const ProfileImage = memo(() => {
         </defs>
 
         {/* 🔵 BORDER */}
-        <image href="/images/profile.jpeg" width="500" height="700" filter="url(#personBorder)" />
+        <image href="/images/Profile.png" width="500" height="700" filter="url(#personBorder)" />
 
         {/* ✨ GLOW */}
-        <image href="/images/profile.jpeg" width="500" height="700" filter="url(#personGlow)" opacity="0.6" />
+        <image href="/images/Profile.png" width="500" height="700" filter="url(#personGlow)" opacity="0.6" />
 
         {/* 🧍 MAIN IMAGE */}
-        <image href="/images/profile.jpeg" width="500" height="700" preserveAspectRatio="xMidYMid meet" />
+        <image href="/images/Profile.png" width="500" height="700" preserveAspectRatio="xMidYMid meet" />
       </svg>
     </div>
   )
@@ -212,17 +200,27 @@ export const Hero = memo(() => {
   const profileRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline()
 
-      // Stagger animation for the main title text (word by word)
+      // Stagger animation for the main title text
       if (titleRef.current) {
         const words = titleRef.current.querySelectorAll(".hero-word")
         if (words.length > 0) {
           tl.fromTo(
             words,
-            { opacity: 0, y: 40, rotationX: -90 },
-            { opacity: 1, y: 0, rotationX: 0, duration: 0.8, stagger: 0.1, ease: "back.out(1.2)" },
+            { opacity: 0, y: isMobile ? 20 : 40, rotationX: isMobile ? 0 : -90 }, // Simplified for mobile
+            {
+              opacity: 1,
+              y: 0,
+              rotationX: 0,
+              duration: isMobile ? 0.4 : 0.8, // Faster duration
+              stagger: isMobile ? 0.05 : 0.1,
+              ease: "power2.out", // Faster ease
+            },
             0,
           )
         } else {
@@ -263,23 +261,25 @@ export const Hero = memo(() => {
         )
       }
 
-      // Profile image entrance with rotation and scale
-      if (profileRef.current) {
+      // Profile image entrance
+      if (profileRef.current && !prefersReducedMotion) {
         tl.fromTo(
           profileRef.current,
-          { opacity: 0, scale: 0.5, rotationY: 90 },
-          { opacity: 1, scale: 1, rotationY: 0, duration: 1, ease: "back.out(1.3)" },
+          { opacity: 0, scale: isMobile ? 0.8 : 0.5, rotationY: isMobile ? 0 : 90 },
+          { opacity: 1, scale: 1, rotationY: 0, duration: isMobile ? 0.6 : 1, ease: "power2.out" },
           0.2,
         )
 
-        // Continuous subtle floating animation for profile
-        gsap.to(profileRef.current, {
-          y: -15,
-          duration: 3,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-        })
+        // Only run subtle floating animation on non-mobile devices to save resources
+        if (!isMobile) {
+          gsap.to(profileRef.current, {
+            y: -15,
+            duration: 3,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+          })
+        }
       }
     })
 
@@ -309,7 +309,7 @@ export const Hero = memo(() => {
               ref={subtitleRef}
               className="text-xl md:text-3xl font-bold text-accent mb-6 text-balance font-signature"
             >
-              Python & Full Stack Developer  
+              Python & Full-Stack Developer
             </h2>
             <p
               ref={descriptionRef}
@@ -340,78 +340,11 @@ export const Hero = memo(() => {
             </div>
 
             {/* Social Links */}
-            <div ref={socialRef} className="flex justify-center lg:justify-start gap-6" role="list">
-              {SOCIAL_LINKS.map(({ href, icon: Icon, label, isExternal }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  {...(isExternal && {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  })}
-                  className="text-muted-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-md p-1"
-                  aria-label={label}
-                  role="listitem"
-                >
-                  <Icon className="w-6 h-6" aria-hidden="true" />
-                </Link>
-              ))}
-            </div>
+            <SocialLinks />
           </div>
 
-          {/* Profile Image Section */}
-          <div ref={profileRef} className="relative hidden lg:flex lg:justify-center lg:items-center">
-            <div
-              className="absolute inset-0 opacity-30 pointer-events-none"
-              style={{
-                backgroundImage: `
-                linear-gradient(0deg, transparent 24%, rgba(148, 0, 211, .1) 25%, rgba(148, 0, 211, .1) 26%, transparent 27%, transparent 74%, rgba(148, 0, 211, .1) 75%, rgba(148, 0, 211, .1) 76%, transparent 77%, transparent),
-                linear-gradient(90deg, transparent 24%, rgba(148, 0, 211, .1) 25%, rgba(148, 0, 211, .1) 26%, transparent 27%, transparent 74%, rgba(148, 0, 211, .1) 75%, rgba(148, 0, 211, .1) 76%, transparent 77%, transparent)
-              `,
-                backgroundSize: "50px 50px",
-              }}
-            />
-
-            <svg viewBox="0 0 500 700" xmlns="http://www.w3.org/2000/svg" className="w-80 h-[420px] relative z-10">
-              <defs>
-                {/* BORDER */}
-                <filter id="personBorder" x="-30%" y="-30%" width="160%" height="160%">
-                  <feMorphology in="SourceAlpha" operator="dilate" radius="3" result="outline" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="
-                  0 0 0 0 0
-                  0 1 0 0 0.7
-                  0 1 0 0 1
-                  0 0 0 1 0"
-                  />
-                  <feComposite in="outline" in2="SourceAlpha" operator="out" />
-                </filter>
-
-                {/* GLOW */}
-                <filter id="personGlow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="12" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="
-                  0 0 0 0 0
-                  0 1 0 0 0.6
-                  0 1 0 0 1
-                  0 0 0 1 0"
-                  />
-                </filter>
-              </defs>
-
-              {/* 🔵 BORDER */}
-              <image href="/images/Profile.png" width="500" height="700" filter="url(#personBorder)" />
-
-              {/* ✨ GLOW */}
-              <image href="/images/Profile.png" width="500" height="700" filter="url(#personGlow)" opacity="0.6" />
-
-              {/* 🧍 MAIN IMAGE */}
-              <image href="/images/Profile.png" width="500" height="700" preserveAspectRatio="xMidYMid meet" />
-            </svg>
-          </div>
+          {/* Profile Image Section - Optimized for mobile */}
+          <ProfileImage />
         </div>
       </div>
     </section>

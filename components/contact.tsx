@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Github, Linkedin, Twitter, Instagram } from "lucide-react"
+import { MapPin, Mail, Phone, Github, Linkedin } from "lucide-react"
 import Link from "next/link"
 import { ContactForm } from "./contact-form"
 
@@ -42,7 +42,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-muted-foreground text-sm uppercase tracking-wider">{info.title}</h3>
-                    <div className="text-lg font-medium">
+                    <div className="text-lg font-medium break-all sm:break-normal">
                       {info.isLink ? (
                         <Link href={info.href} className="hover:text-primary transition-colors">
                           {info.value}
@@ -62,8 +62,6 @@ export function Contact() {
                 {[
                   { icon: <Github />, href: "https://github.com/Madhusudan04337" },
                   { icon: <Linkedin />, href: "https://www.linkedin.com/in/madhu-sudan-0006a429a/" },
-                  { icon: <Twitter />, href: "#" },
-                  { icon: <Instagram />, href: "#" },
                 ].map((social, idx) => (
                   <Link
                     key={idx}

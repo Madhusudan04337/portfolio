@@ -30,17 +30,21 @@ export function Experience() {
   }, [])
 
   useEffect(() => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
+
     const ctx = gsap.context(() => {
       cardsRef.current.forEach((card, i) => {
         gsap.from(card, {
           scrollTrigger: {
             trigger: card,
-            start: "top bottom-=100",
+            start: isMobile ? "top bottom" : "top bottom-=100",
+            once: true, // Performance: only play once
           },
-          x: i % 2 === 0 ? -50 : 50,
+          x: isMobile ? 0 : i % 2 === 0 ? -50 : 50, // No lateral movement on mobile
+          y: isMobile ? 30 : 0,
           opacity: 0,
-          duration: 1,
-          ease: "power3.out",
+          duration: isMobile ? 0.6 : 1,
+          ease: "power2.out",
         })
       })
     }, sectionRef)

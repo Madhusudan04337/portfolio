@@ -55,27 +55,29 @@ export function Portfolio() {
   useLayoutEffect(() => {
     if (!sectionRef.current || projects.length === 0) return
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
+
     const ctx = gsap.context(() => {
       gsap.from(".portfolio-header", {
-        y: 40,
+        y: isMobile ? 20 : 40,
         opacity: 0,
-        duration: 0.8,
+        duration: isMobile ? 0.6 : 0.8,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 85%",
           once: true,
         },
       })
 
       gsap.fromTo(
         ".project-card",
-        { y: 60, opacity: 0 },
+        { y: isMobile ? 30 : 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: "power3.out",
+          stagger: isMobile ? 0.08 : 0.15,
+          duration: isMobile ? 0.6 : 0.8,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: ".projects-grid",
             start: "top 95%",
@@ -98,22 +100,22 @@ export function Portfolio() {
       >
         <div className="flex flex-col h-full">
           {/* Header with Icon */}
-          <div className="relative h-48 bg-gradient-to-br from-primary/10 via-accent/5 to-muted/10 flex items-center justify-center p-12 border-b border-border/30">
+          <div className="relative h-48 bg-gradient-to-br from-primary/10 via-accent/5 to-muted/10 flex items-center justify-center p-12 border-b border-border/30 overflow-hidden">
             <div className="text-primary/30 group-hover:text-primary group-hover:scale-110 transition-all duration-700">
               {project.icon}
             </div>
 
             {/* Links Overlay */}
-            <nav className="absolute inset-0 bg-gradient-to-br from-primary/80 to-accent/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center gap-6">
+            <nav className="absolute inset-0 bg-primary/90 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center gap-6 z-20 md:flex hidden">
               {project.github && (
                 <Link
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all hover:scale-110 active:scale-95"
                   aria-label="View on GitHub"
                 >
-                  <Github className="w-6 h-6 text-white" />
+                  <Github className="w-7 h-7 text-white" />
                 </Link>
               )}
 
@@ -122,17 +124,41 @@ export function Portfolio() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-white/10 hover:bg-white/20 rounded-lg transition-all"
+                  className="p-3 bg-white/10 hover:bg-white/20 rounded-xl transition-all hover:scale-110 active:scale-95"
                   aria-label="View Live Demo"
                 >
-                  <ExternalLink className="w-6 h-6 text-white" />
+                  <ExternalLink className="w-7 h-7 text-white" />
                 </Link>
               )}
             </nav>
           </div>
 
           {/* Content */}
-          <div className="p-8 flex-1 flex flex-col">
+          <div className="p-8 flex-1 flex flex-col relative">
+            {/* Mobile-only links section */}
+            <div className="md:hidden flex gap-4 mb-6">
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-lg text-sm font-bold border border-primary/20"
+                >
+                  <Github className="w-4 h-4" /> GitHub
+                </Link>
+              )}
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-bold shadow-lg shadow-primary/20"
+                >
+                  <ExternalLink className="w-4 h-4" /> Live Demo
+                </Link>
+              )}
+            </div>
+
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-5">
               {project.tags.slice(0, 3).map((tag) => (
