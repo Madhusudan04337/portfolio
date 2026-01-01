@@ -1,0 +1,29 @@
+[
+  {
+    "id": "niralverse-2k25",
+    "name": "NiralVerse 2K25 – College Tech Fest Website",
+    "year": "2025",
+    "description": "Contributed to the development and management of the official website for NiralVerse 2K25, handling event pages, competitions, and participant workflows.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "github": "https://github.com/Madhusudan04337/Niral-verse2k25.git",
+    "link": "https://niral-verse2k25.netlify.app/"
+  },
+  {
+    "id": "corporate-training-website",
+    "name": "Corporate Training Website",
+    "year": "2024",
+    "description": "A responsive corporate training website focused on improving UI consistency, responsiveness, and layout alignment.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap 5"],
+    "github": "https://github.com/Madhusudan04337/nexila-technologies-clone.git",
+    "link": "https://madhusudan04337.github.io/nexila-technologies-clone/"
+  },
+  {
+    "id": "ev-vehicle-charge-demand",
+    "name": "EV Vehicle Charge Demand Forecasting",
+    "year": "2025",
+    "description": "A machine learning–based web application to forecast electric vehicle charging demand for data-driven decision-making.",
+    "technologies": ["Python", "Machine Learning", "Data Analysis"],
+    "github": "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git",
+    "link": "https://evvehiclechargedemand-duf5ypvrvpkmt2muqpabcn.streamlit.app/"
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Frontend Development",
+    "icon": "🌐",
+    "skills": [
+      { "name": "HTML", "level": 90 },
+      { "name": "CSS", "level": 85 },
+      { "name": "JavaScript", "level": 75 },
+      { "name": "React", "level": 80 }
+    ]
+  },
+  {
+    "title": "Frameworks & Libraries",
+    "icon": "🛠️",
+    "skills": [
+      { "name": "Bootstrap", "level": 80 },
+      { "name": "Django", "level": 75 },
+      { "name": "FastAPI", "level": 70 },
+      { "name": "Tailwind CSS", "level": 65 }
+    ]
+  },
+  {
+    "title": "Backend Development",
+    "icon": "🖥️",
+    "skills": [
+      { "name": "Node.js", "level": 80 },
+      { "name": "Express", "level": 75 },
+      { "name": "PostgreSQL", "level": 70 },
+      { "name": "MongoDB", "level": 70 },
+      { "name": "MySQL", "level": 65 }
+    ]
+  },
+  {
+    "title": "Data Analysis",
+    "icon": "📊",
+    "skills": [
+      { "name": "Python", "level": 85 },
+      { "name": "Tableau", "level": 75 },
+      { "name": "Power BI", "level": 70 },
+      { "name": "Pandas", "level": 50 },
+      { "name": "NumPy", "level": 50 },
+      { "name": "Matplotlib", "level": 50 }
+    ]
+  },
+  {
+    "title": "Version Control",
+    "icon": "🔧",
+    "skills": [
+      { "name": "Git", "level": 80 },
+      { "name": "GitHub", "level": 75 }
+    ]
+  }
+]

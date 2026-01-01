@@ -1,0 +1,42 @@
+[
+  {
+    "id": "udemy-python-telusko",
+    "title": "Python for Beginners with Telusko",
+    "issuer": "Udemy",
+    "date": "Dec 1, 2025",
+    "type": "Course Completion",
+    "credentialUrl": "https://www.udemy.com/certificate/UC-26bc582f-450f-45d7-9337-cbe91dc6baad/"
+  },
+  {
+    "id": "mongodb-crud-smartbridge",
+    "title": "MongoDB CRUD Operations in Node.js",
+    "issuer": "MongoDB Inc. (SmartBridge)",
+    "date": "May 10, 2025",
+    "type": "Proof of Completion",
+    "credentialUrl": "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/669d53f5-656b-4b86-a223-13ddb1b6aa59-madhusudan-n-a-357f8d1f-90e9-4f01-95a7-566b1f60a9a1-certificate.pdf"
+  },
+  {
+    "id": "gfg-fullstack-skillup",
+    "title": "Full Stack Web Development – Skill Up",
+    "issuer": "GeeksforGeeks",
+    "date": "2024",
+    "type": "Course Completion",
+    "credentialUrl": "https://www.geeksforgeeks.org/certificate/b78f0b8255e47727dd2e7727040c27e3?utm_source=socials&utm_medium=cc_link"
+  },
+  {
+    "id": "sunstone-advanced-python",
+    "title": "Advance Python and its Applications",
+    "issuer": "Ace Academy, Sunstone",
+    "date": "Mar 10, 2025",
+    "type": "Certification",
+    "credentialUrl": "/courses/Advance_Python_and_its_Applications.pdf"
+  },
+  {
+    "id": "sunstone-advanced-javascript",
+    "title": "Advanced JavaScript",
+    "issuer": "Sunstone School of Technology",
+    "date": "Jun 2025",
+    "type": "Certification",
+    "credentialUrl": "/courses/Advanced_JavaScript.jpg"
+  }
+]

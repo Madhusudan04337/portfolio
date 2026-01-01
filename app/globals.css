@@ -1,0 +1,218 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Added custom font face for Brotherland Signature Bold */
+@font-face {
+  font-family: "Brotherland Signature";
+  src: url("/fonts/BrotherlandsignatureBold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Modern sophisticated color palette inspired by contemporary portfolio design */
+  --background: oklch(0.12 0.01 250);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.15 0.02 250);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.15 0.02 250);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.63 0.22 195);
+  --primary-foreground: oklch(0.98 0.01 250);
+  --secondary: oklch(0.2 0.02 250);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.3 0.01 250);
+  --muted-foreground: oklch(0.6 0.02 250);
+  --accent: oklch(0.7 0.2 160);
+  --accent-foreground: oklch(0.98 0.01 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.01 250);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.18 0.02 250);
+  --ring: oklch(0.63 0.22 195);
+  --chart-1: oklch(0.63 0.22 195);
+  --chart-2: oklch(0.65 0.18 280);
+  --chart-3: oklch(0.7 0.2 160);
+  --chart-4: oklch(0.75 0.18 120);
+  --chart-5: oklch(0.65 0.22 340);
+  --radius: 0.875rem;
+  --sidebar: oklch(0.15 0.02 250);
+  --sidebar-foreground: oklch(0.96 0.01 250);
+  --sidebar-primary: oklch(0.63 0.22 195);
+  --sidebar-primary-foreground: oklch(0.98 0.01 250);
+  --sidebar-accent: oklch(0.2 0.02 250);
+  --sidebar-accent-foreground: oklch(0.96 0.01 250);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.63 0.22 195);
+  /* Added custom font variable for titles */
+  --font-signature: "Brotherland Signature", cursive;
+}
+
+.dark {
+  --background: oklch(0.12 0.01 250);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.15 0.02 250);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.15 0.02 250);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.63 0.22 195);
+  --primary-foreground: oklch(0.98 0.01 250);
+  --secondary: oklch(0.2 0.02 250);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.3 0.01 250);
+  --muted-foreground: oklch(0.6 0.02 250);
+  --accent: oklch(0.7 0.2 160);
+  --accent-foreground: oklch(0.98 0.01 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.01 250);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.18 0.02 250);
+  --ring: oklch(0.63 0.22 195);
+  --chart-1: oklch(0.63 0.22 195);
+  --chart-2: oklch(0.65 0.18 280);
+  --chart-3: oklch(0.7 0.2 160);
+  --chart-4: oklch(0.75 0.18 120);
+  --chart-5: oklch(0.65 0.22 340);
+  --sidebar: oklch(0.15 0.02 250);
+  --sidebar-foreground: oklch(0.96 0.01 250);
+  --sidebar-primary: oklch(0.63 0.22 195);
+  --sidebar-primary-foreground: oklch(0.98 0.01 250);
+  --sidebar-accent: oklch(0.2 0.02 250);
+  --sidebar-accent-foreground: oklch(0.96 0.01 250);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.63 0.22 195);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-signature: "Brotherland Signature", cursive;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Added signature font utility class */
+  .font-signature {
+    font-family: var(--font-signature);
+    font-weight: normal;
+    letter-spacing: 0.5px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* Updated gradient to use new accent color */
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.63 0.22 195), oklch(0.7 0.2 160));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Added grid background utility */
+  .grid-background {
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        rgba(148, 0, 211, 0.1) 25%,
+        rgba(148, 0, 211, 0.1) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(148, 0, 211, 0.1) 75%,
+        rgba(148, 0, 211, 0.1) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        rgba(148, 0, 211, 0.1) 25%,
+        rgba(148, 0, 211, 0.1) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(148, 0, 211, 0.1) 75%,
+        rgba(148, 0, 211, 0.1) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 50px 50px;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px oklch(0.63 0.22 195 / 0.5);
+    }
+    to {
+      box-shadow: 0 0 20px oklch(0.63 0.22 195 / 0.8), 0 0 30px oklch(0.63 0.22 195 / 0.4);
+    }
+  }
+}

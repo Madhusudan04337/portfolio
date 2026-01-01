@@ -1,0 +1,26 @@
+[
+  {
+    "period": "Sep 2024 - Jan 2025",
+    "title": "Frontend Development Intern",
+    "company": "Nexila Technologies",
+    "description": "Worked on frontend development tasks including responsive UI design, component-based layouts, and modern web technologies.",
+    "skills": ["HTML", "CSS", "JavaScript", "Bootstrap", "Responsive Design"],
+    "certificate": "/internship/FrontEnd Development.jpg"
+  },
+  {
+    "period": "Aug 2025 - Sep 2025",
+    "title": "Front End Web Development Intern",
+    "company": "Edunet Foundation (AICTE)",
+    "description": "Completed a 6-week internship focused on front-end web development in collaboration with AICTE.",
+    "skills": ["HTML", "CSS", "JavaScript", "Web Fundamentals"],
+    "certificate": "/internship/Frontend_web_development.pdf"
+  },
+  {
+    "period": "Jun 2025 - Sep 2025",
+    "title": "Web Development Intern",
+    "company": "UptoSkills",
+    "description": "Recognized for dedication and performance during a web development internship.",
+    "skills": ["React.js", "Express.js", "Node.js", "PostgreSQL"],
+    "certificate": "/internship/Web_Development.pdf"
+  }
+]
