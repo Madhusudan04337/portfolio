@@ -25,5 +25,23 @@
     "technologies": ["Python", "Machine Learning", "Data Analysis"],
     "github": "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git",
     "link": "https://evvehiclechargedemand-duf5ypvrvpkmt2muqpabcn.streamlit.app/"
+  },
+  {
+    "id": "travello-travel-portal",
+    "name": "Travello – Premium Travel Agency Portal",
+    "year": "2025",
+    "description": "A full-stack travel booking web application built with Django and PostgreSQL, featuring secure authentication, dynamic destination management, Cloudinary-powered media handling, and production deployment on Railway.",
+    "technologies": ["Python", "Django", "PostgreSQL", "Cloudinary", "HTML", "CSS"],
+    "github": "https://github.com/Madhusudan04337/travello-web.git",
+    "link": "https://travello-web-production.up.railway.app/"
+  },
+  {
+    "id": "climacast-weather-app",
+    "name": "ClimaCast – Dynamic Weather Advisor",
+    "year": "2024",
+    "description": "A modern, responsive weather dashboard providing real-time weather data, 5-day forecasts, geolocation support, smart suggestions, and light/dark modes using pure HTML, CSS, and JavaScript.",
+    "technologies": ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
+    "github": "https://github.com/Madhusudan043337/climacast-weather-app.git",
+    "link": ""
   }
 ]
