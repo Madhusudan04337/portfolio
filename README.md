@@ -17,7 +17,7 @@ A modern, high-performance portfolio website built with Next.js 16, Tailwind CSS
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
 - **Animations**: [GSAP](https://greensock.com/gsap/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Deployment**: [Vercel](https://vercel.com/)
+- **Deployment**: [Netlify](https://www.netlify.com/)
 
 ## 🛠️ Getting Started
 
