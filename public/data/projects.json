@@ -41,7 +41,7 @@
     "year": "2024",
     "description": "A modern, responsive weather dashboard providing real-time weather data, 5-day forecasts, geolocation support, smart suggestions, and light/dark modes using pure HTML, CSS, and JavaScript.",
     "technologies": ["HTML", "CSS", "JavaScript", "OpenWeatherMap API"],
-    "github": "https://github.com/Madhusudan043337/climacast-weather-app.git",
-    "link": ""
+    "github": "https://github.com/Madhusudan04337/climacast-weather-app.git",
+    "link": "https://madhusudan04337.github.io/climacast-weather-app/"
   }
 ]
