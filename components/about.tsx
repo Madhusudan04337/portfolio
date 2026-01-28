@@ -24,13 +24,13 @@ export function About() {
           <div className="flex-1 w-full max-w-[280px] md:max-w-md mx-auto">
             <div className="relative aspect-square">
               <div className="absolute inset-0 bg-primary/10 rounded-full translate-x-4 translate-y-4" />
-              <div className="relative w-full h-full rounded-[39%] overflow-hidden border-2 border-border">
+              <div className="relative w-full h-full rounded-[50%] overflow-hidden border-2 border-border">
                 <Image
-                  src="/images/Profile.png"
+                  src="/images/Profile2.png"
                   alt="Madhusudan Profile"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 240px, 400px" // Optimized sizes attribute
+                  sizes="(max-width: 768px) 240px, 400px" 
                   priority // Faster LCP
                 />
               </div>
