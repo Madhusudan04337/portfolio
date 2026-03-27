@@ -5,9 +5,13 @@
     "year": "2026",
     "description": "Contributed to the development and management of the official website for NiralVerse 2K26, handling event pages, competitions, and participant workflows.",
     "technologies": [
-      "HTML",
-      "CSS",
-      "JavaScript"
+      "Prompt Engineering",
+      "TypeScript",
+      "React js",
+      "Node js",
+      "Email JS",
+      "GSAP",
+      "Tailwind CSS"
     ],
     "github": "https://github.com/Madhusudan04337/Niral-verse2k26.git",
     "link": "https://niral-verse2k26.netlify.app/"
@@ -19,11 +23,8 @@
     "description": "AI-powered pantry assistant - upload a pantry photo to detect ingredients, generate recipes, get substitution suggestions, and score your pantry health using Gemini Vision API.",
     "technologies": [
       "Python",
-      "Django",
-      "PostgreSQL",
-      "Cloudinary",
-      "HTML",
-      "CSS"
+      "streamlit",
+      "google-genai"
     ],
     "github": "https://github.com/Madhusudan04337/kitchen-vision.git",
     "link": "https://mdk-kitchen-vision.streamlit.app/"
