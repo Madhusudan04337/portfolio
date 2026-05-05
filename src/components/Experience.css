@@ -1,0 +1,122 @@
+:root {
+	--bg: 25% 0.0075 70;
+	--pink: 77.75% 0.1003 350.51;
+	--gold: 84.16% 0.1169 71.19;
+	--mint: 84.12% 0.1334 165.28;
+	--blue: 75% 0.15 250;
+	--purple: 70% 0.18 300;
+
+	--mobile--w: 380px;
+	--mobile--h: 520px;
+
+	--outline-w: 2px;
+	--preview-bg: transparent;
+}
+
+.exp-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.exp-card__container {
+	display: flex;
+	flex-wrap: wrap;
+	place-items: center;
+	place-content: center;
+	gap: 1rem;
+}
+
+/* fade out other cards when one is :hover/:focus-within */
+.exp-card__container:has(:hover, :focus-within) .exp-card:not(:hover, :focus) {
+	opacity: 0.4;
+}
+
+.exp-card {
+	--shadow-blur: 24px;
+	--shadow-color: oklch(var(--bg));
+	--border-color: rgba(255, 255, 255, 0.05);
+
+	background-clip: padding-box;
+	background-color: rgba(20, 20, 20, 0.6);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+    
+	border: var(--outline-w) solid var(--border-color);
+	border-radius: 16px;
+	box-shadow: 0 0 var(--shadow-blur) 0 var(--shadow-color);
+
+	transition-property: border, box-shadow, outline-offset, opacity, rotate, scale, z-index;
+	transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+
+	opacity: 0.75;
+	scale: 0.85;
+	rotate: var(--rotation, -4deg);
+
+	outline: var(--outline-w) solid var(--preview-bg);
+	outline-offset: var(--outline-w);
+
+	min-height: var(--mobile--h);
+	height: 100%;
+	min-width: var(--mobile--w);
+	max-width: var(--mobile--w);
+	width: 100%;
+	position: relative;
+    
+	padding: 2.5rem 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	color: white;
+	cursor: default;
+}
+
+.exp-card:focus-within,
+.exp-card:hover {
+	--shadow-blur: 150px;
+	--shadow-color: var(--theme-color, oklch(var(--gold)));
+	--border-color: var(--shadow-color);
+
+	background-color: rgba(10, 10, 10, 0.95);
+	opacity: 1;	
+	
+	outline-offset: calc(var(--outline-w) / 2);
+	
+	scale: 1;
+	rotate: 0deg;
+	
+	transition-property: border, box-shadow, outline-offset, opacity, rotate, scale, z-index;
+	transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+}
+
+.exp-card:focus-within {
+	z-index: 5;
+}
+
+.exp-card:hover	{
+	z-index: 6;
+}
+
+.exp-card:nth-of-type(1) {
+	--rotation: -6deg;
+	--theme-color: oklch(var(--pink));
+}
+
+.exp-card:nth-of-type(2) {
+	--rotation: 4deg;
+	--theme-color: oklch(var(--gold));
+}
+
+.exp-card:nth-of-type(3) {
+	--rotation: -3deg;
+	--theme-color: oklch(var(--mint));
+}
+
+.exp-card:nth-of-type(4) {
+	--rotation: 5deg;
+	--theme-color: oklch(var(--blue));
+}
+
+.exp-card:nth-of-type(5) {
+	--rotation: -5deg;
+	--theme-color: oklch(var(--purple));
+}
