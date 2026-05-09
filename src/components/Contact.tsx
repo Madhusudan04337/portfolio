@@ -51,186 +51,200 @@ export function Contact() {
   };
 
   return (
-    <section className="py-24 px-6 bg-white border-t border-zinc-100 relative overflow-hidden" id="contact">
-      {/* Background soft gradients */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-50 rounded-full blur-[100px] opacity-60" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-orange-50 rounded-full blur-[100px] opacity-60" />
+    <section className="py-32 px-6 bg-[#FAFAFA] relative overflow-hidden" id="contact">
+      {/* Background Decor */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl opacity-50" />
+        <div className="absolute -bottom-24 -left-24 w-[500px] h-[500px] bg-orange-50 rounded-full blur-[120px] opacity-40" />
+        <div className="absolute inset-0 bg-dot-pattern opacity-[0.03]" />
       </div>
 
-      <div className="max-w-[1100px] mx-auto relative z-10">
-        
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-medium text-zinc-900 inline-block relative border-b-4 border-[#4A32A1] pb-2"
-          >
-            Contact Me
-          </motion.h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col lg:flex-row gap-20 items-start">
           
-          {/* Left Column: Info Cards */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5 flex flex-col gap-4"
-          >
-            {/* Location */}
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-6 flex items-center gap-5 hover:bg-white hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-100 shadow-sm shrink-0">
-                <MapPin className="w-5 h-5 text-[#4A32A1]" />
-              </div>
-              <div>
-                <div className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Location</div>
-                <div className="text-zinc-900 font-medium text-[15px]">Chennai, India</div>
-              </div>
+          {/* Left Column: Creative Header & Info */}
+          <div className="lg:w-5/12 space-y-12">
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-[#4A32A1] text-xs font-bold uppercase tracking-wider"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#4A32A1] animate-pulse" />
+                Available for projects
+              </motion.div>
+              
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-5xl md:text-7xl font-display font-bold text-zinc-900 leading-tight"
+              >
+                Let's build <br />
+                <span className="text-[#4A32A1]">something </span> 
+                great.
+              </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-zinc-600 text-lg max-w-md leading-relaxed"
+              >
+                Have a vision? I have the tools. Reach out and let's turn your ideas into high-fidelity digital reality.
+              </motion.p>
             </div>
 
-            {/* Email */}
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-6 flex items-center gap-5 hover:bg-white hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-100 shadow-sm shrink-0">
-                <Mail className="w-5 h-5 text-[#4A32A1]" />
-              </div>
-              <div className="overflow-hidden">
-                <div className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Email</div>
-                <div className="text-zinc-900 font-medium text-[15px] truncate">madhusudan27102005@gmail.com</div>
-              </div>
+            <div className="space-y-6">
+              {[
+                { icon: MapPin, label: "Location", value: "Chennai, India" },
+                { icon: Mail, label: "Email", value: "madhusudan27102005@gmail.com" },
+                { icon: Phone, label: "Phone", value: "+91 9360331266" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + idx * 0.1 }}
+                  className="group flex items-center gap-6"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-white border border-zinc-100 flex items-center justify-center shadow-sm group-hover:border-[#4A32A1]/30 group-hover:shadow-md transition-all duration-300">
+                    <item.icon className="w-6 h-6 text-[#4A32A1]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">{item.label}</p>
+                    <p className="text-zinc-900 font-medium text-lg">{item.value}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Phone */}
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-6 flex items-center gap-5 hover:bg-white hover:shadow-md transition-all">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border border-zinc-100 shadow-sm shrink-0">
-                <Phone className="w-5 h-5 text-[#4A32A1]" />
-              </div>
-              <div>
-                <div className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider mb-1">Phone</div>
-                <div className="text-zinc-900 font-medium text-[15px]">+91 9360331266</div>
-              </div>
-            </div>
-
-            {/* Connect With Me */}
-            <div className="bg-zinc-50 border border-zinc-100 rounded-2xl p-6 mt-2 hover:bg-white hover:shadow-md transition-all">
-              <div className="text-[15px] font-bold text-zinc-900 mb-4">Connect With Me</div>
-              <div className="flex items-center gap-3">
-                <a href="https://github.com/Madhusudan04337" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:text-[#4A32A1] hover:border-[#4A32A1] hover:shadow-sm transition-all relative group">
-                   <div className="absolute inset-0 bg-[#4A32A1]/5 rounded-full scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all z-0" />
-                   <Github className="w-4 h-4 relative z-10" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="pt-8 border-t border-zinc-200"
+            >
+              <p className="text-sm font-bold text-zinc-900 mb-6 uppercase tracking-widest">Connect Socially</p>
+              <div className="flex gap-4">
+                <a href="https://github.com/Madhusudan04337" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-[#4A32A1] hover:text-white hover:border-[#4A32A1] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <Github className="w-5 h-5" />
                 </a>
-                <a href="https://www.linkedin.com/in/madhu-sudan-0006a429a/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:text-[#0077b5] hover:border-[#0077b5] hover:shadow-sm transition-all relative group">
-                   <div className="absolute inset-0 bg-[#0077b5]/5 rounded-full scale-50 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all z-0" />
-                   <Linkedin className="w-4 h-4 relative z-10" />
+                <a href="https://www.linkedin.com/in/madhu-sudan-0006a429a/" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Right Column: Form */}
+          {/* Right Column: Premium Form Card */}
           <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-7 bg-white rounded-[28px] border border-zinc-200 shadow-[0_12px_40px_rgb(0,0,0,0.08)] p-8 lg:p-10 relative overflow-hidden"
+            transition={{ duration: 0.8 }}
+            className="lg:w-7/12 w-full relative"
           >
-            <h3 className="text-2xl font-display font-medium text-zinc-900 mb-8">Send Me a Message</h3>
+            {/* Decorative Card Glow */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-[#4A32A1]/20 to-orange-100/30 rounded-[32px] blur-xl opacity-50" />
             
-            <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 {/* Name */}
-                 <div className="space-y-2">
-                   <label className="text-[13px] font-semibold text-zinc-700">Name</label>
-                   <div className="relative">
-                     <User className="absolute left-3.5 top-3.5 text-zinc-400 w-4 h-4" />
-                     <input 
-                       name="name"
-                       type="text" 
-                       required
-                       placeholder="Your Name" 
-                       className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 focus:border-[#4A32A1] transition-all"
-                     />
-                   </div>
-                 </div>
-                 
-                 {/* Email */}
-                 <div className="space-y-2">
-                   <label className="text-[13px] font-semibold text-zinc-700">Email</label>
-                   <div className="relative">
-                     <Mail className="absolute left-3.5 top-3.5 text-zinc-400 w-4 h-4" />
-                     <input 
-                       name="email"
-                       type="email" 
-                       required
-                       placeholder="your@email.com" 
-                       className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 focus:border-[#4A32A1] transition-all"
-                     />
-                   </div>
-                 </div>
-               </div>
+            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[32px] shadow-2xl p-8 md:p-12">
+              <div className="mb-10">
+                <h3 className="text-3xl font-display font-bold text-zinc-900">Send Me a Message</h3>
+                <div className="h-1.5 w-12 bg-[#4A32A1] rounded-full mt-3" />
+              </div>
 
-               {/* Subject */}
-               <div className="space-y-2">
-                 <label className="text-[13px] font-semibold text-zinc-700">Subject</label>
-                 <div className="relative">
-                   <Type className="absolute left-3.5 top-3.5 text-zinc-400 w-4 h-4" />
-                   <input 
-                     name="subject"
-                     type="text" 
-                     required
-                     placeholder="What is this about?" 
-                     className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 focus:border-[#4A32A1] transition-all"
-                   />
-                 </div>
-               </div>
+              <form ref={form} onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Name */}
+                  <div className="group relative">
+                    <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
+                    <div className="relative">
+                      <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
+                      <input 
+                        name="name"
+                        type="text" 
+                        required
+                        placeholder="John Doe" 
+                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                      />
+                    </div>
+                  </div>
 
-               {/* Message */}
-               <div className="space-y-2">
-                 <label className="text-[13px] font-semibold text-zinc-700">Message</label>
-                 <div className="relative">
-                   <MessageSquare className="absolute left-3.5 top-3.5 text-zinc-400 w-4 h-4" />
-                   <textarea 
-                     name="message"
-                     required
-                     placeholder="Your message..." 
-                     className="w-full bg-zinc-50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-[14px] text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 focus:border-[#4A32A1] transition-all min-h-[120px] resize-y"
-                   />
-                 </div>
-               </div>
+                  {/* Email */}
+                  <div className="group relative">
+                    <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
+                    <div className="relative">
+                      <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
+                      <input 
+                        name="email"
+                        type="email" 
+                        required
+                        placeholder="john@example.com" 
+                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
 
-               {/* Submit Button */}
-               <div className="pt-2">
-                 <button 
-                   type="submit"
-                   disabled={isSubmitting}
-                   className={`w-full ${status === 'success' ? 'bg-green-600' : status === 'error' ? 'bg-red-600' : 'bg-[#4A32A1] hover:bg-[#3D2887]'} text-white py-4 rounded-xl font-medium transition-all shadow-lg flex items-center justify-center gap-2 text-[15px] disabled:opacity-70 disabled:cursor-not-allowed`}
-                 >
-                   {isSubmitting ? (
-                     <>Sending... <Loader2 className="w-4 h-4 animate-spin" /></>
-                   ) : status === 'success' ? (
-                     <>Sent Successfully! <CheckCircle2 className="w-4 h-4" /></>
-                   ) : status === 'error' ? (
-                     <>Failed to Send <AlertCircle className="w-4 h-4" /></>
-                   ) : (
-                     <>Send Message <Send className="w-4 h-4" /></>
-                   )}
-                 </button>
-               </div>
-               
-               {/* Footer text */}
-               <div className="text-center">
-                 <p className="text-xs text-zinc-500 font-medium">
-                   {status === 'success' ? 'Thanks for reaching out! I\'ll be in touch.' : 'I\'ll get back to you as soon as possible. Usually within 24 hours.'}
-                 </p>
-               </div>
-            </form>
+                {/* Subject */}
+                <div className="group relative">
+                  <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Subject</label>
+                  <div className="relative">
+                    <Type className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
+                    <input 
+                      name="subject"
+                      type="text" 
+                      required
+                      placeholder="Collaboration inquiry" 
+                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                    />
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div className="group relative">
+                  <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Message</label>
+                  <div className="relative">
+                    <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
+                    <textarea 
+                      name="message"
+                      required
+                      placeholder="Tell me about your project..." 
+                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-5 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300 min-h-[160px] resize-none"
+                    />
+                  </div>
+                </div>
+
+                <button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full group relative overflow-hidden py-5 rounded-[20px] font-bold text-[16px] transition-all duration-500 shadow-xl active:scale-[0.98]
+                    ${status === 'success' ? 'bg-green-600' : status === 'error' ? 'bg-red-600' : 'bg-zinc-900 hover:bg-[#4A32A1]'} text-white`}
+                >
+                  <div className="relative z-10 flex items-center justify-center gap-3">
+                    {isSubmitting ? (
+                      <>Processing <Loader2 className="w-5 h-5 animate-spin" /></>
+                    ) : status === 'success' ? (
+                      <>Message Dispatched <CheckCircle2 className="w-5 h-5" /></>
+                    ) : status === 'error' ? (
+                      <>Submission Failed <AlertCircle className="w-5 h-5" /></>
+                    ) : (
+                      <>Send Message <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" /></>
+                    )}
+                  </div>
+                </button>
+                
+                <p className="text-center text-xs text-zinc-400 font-medium tracking-wide">
+                  I usually respond within 24 business hours.
+                </p>
+              </form>
+            </div>
           </motion.div>
-
         </div>
       </div>
     </section>

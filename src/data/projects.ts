@@ -1,6 +1,5 @@
 import niralVerseImg from "../assets/projects/niral-verse.png";
 import travelloImg from "../assets/projects/travello.png";
-import blogSiteImg from "../assets/projects/blog-site.png";
 import electionAssistantImg from "../assets/projects/election-assistant.png";
 import kitchenVisionImg from "../assets/projects/kitchen-vision.png";
 import evChargeImg from "../assets/projects/ev-charge.png";
@@ -38,20 +37,6 @@ export const showcaseData = [
   {
     id: "003",
     leftPanel: {
-      header: "Blogging Platform",
-      body: "Developed a high-performance MERN stack content management system. Designed fully responsive React interfaces powered by secure, custom RESTful APIs for dynamic content creation and real-time data synchronization.",
-      buttonText: "Read Blogs",
-    },
-    rightPanel: {
-      visualAsset: blogSiteImg,
-      cardStyle: "motion_graphic_video",
-    },
-    liveUrl: "https://blog-site-two-mu.vercel.app/",
-    repoUrl: "https://github.com/Madhusudan04337/blog-site.git",
-  },
-  {
-    id: "004",
-    leftPanel: {
       header: "Election Assistant",
       body: "A definitive 12-step guide to voting in India. Built with accessibility in mind, providing simple, fast, and 100% free voter education to help first-time voters navigate eligibility and the polling process.",
       buttonText: "Launch Assistant",
@@ -64,7 +49,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/election-assistant.git",
   },
   {
-    id: "005",
+    id: "004",
     leftPanel: {
       header: "Kitchen Vision",
       body: "AI-powered culinary assistant that utilizes computer vision to identify ingredients and suggest recipes. Built with Streamlit for a seamless, interactive user experience.",
@@ -78,7 +63,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/kitchen-vision.git",
   },
   {
-    id: "006",
+    id: "005",
     leftPanel: {
       header: "EV Charge Demand",
       body: "Advanced data visualization and predictive analytics for Electric Vehicle charging demand. Leverages machine learning models to forecast infrastructure needs based on urban data.",
@@ -92,7 +77,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git",
   },
   {
-    id: "007",
+    id: "006",
     leftPanel: {
       header: "Nexila Technologies Clone",
       body: "A pixel-perfect corporate website clone demonstrating high-fidelity frontend reproduction skills. Features complex layouts, responsive design, and smooth scroll interactions.",
