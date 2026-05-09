@@ -51,7 +51,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-32 px-6 bg-[#FAFAFA] relative overflow-hidden" id="contact">
+    <section className="py-20 px-6 bg-[#FAFAFA] relative overflow-hidden" id="contact">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl opacity-50" />
@@ -60,8 +60,8 @@ export function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row gap-20 items-start">
-          
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
+
           {/* Left Column: Creative Header & Info */}
           <div className="lg:w-5/12 space-y-12">
             <div className="space-y-6">
@@ -74,24 +74,24 @@ export function Contact() {
                 <div className="w-2 h-2 rounded-full bg-[#4A32A1] animate-pulse" />
                 Available for projects
               </motion.div>
-              
-              <motion.h2 
+
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-5xl md:text-7xl font-display font-bold text-zinc-900 leading-tight"
+                className="text-4xl md:text-6xl font-display font-bold text-zinc-900 leading-tight"
               >
                 Let's build <br />
-                <span className="text-[#4A32A1]">something </span> 
+                <span className="text-[#4A32A1]">something </span>
                 great.
               </motion.h2>
-              
+
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-zinc-600 text-lg max-w-md leading-relaxed"
+                className="text-zinc-600 text-base max-w-md leading-relaxed"
               >
                 Have a vision? I have the tools. Reach out and let's turn your ideas into high-fidelity digital reality.
               </motion.p>
@@ -109,14 +109,14 @@ export function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + idx * 0.1 }}
-                  className="group flex items-center gap-6"
+                  className="group flex items-center gap-5"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white border border-zinc-100 flex items-center justify-center shadow-sm group-hover:border-[#4A32A1]/30 group-hover:shadow-md transition-all duration-300">
-                    <item.icon className="w-6 h-6 text-[#4A32A1]" />
+                  <div className="w-12 h-12 rounded-2xl bg-white border border-zinc-100 flex items-center justify-center shadow-sm group-hover:border-[#4A32A1]/30 group-hover:shadow-md transition-all duration-300">
+                    <item.icon className="w-5 h-5 text-[#4A32A1]" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">{item.label}</p>
-                    <p className="text-zinc-900 font-medium text-lg">{item.value}</p>
+                    <p className="text-zinc-900 font-medium text-base">{item.value}</p>
                   </div>
                 </motion.div>
               ))}
@@ -129,7 +129,7 @@ export function Contact() {
               transition={{ delay: 0.6 }}
               className="pt-8 border-t border-zinc-200"
             >
-              <p className="text-sm font-bold text-zinc-900 mb-6 uppercase tracking-widest">Connect Socially</p>
+              <p className="text-xs font-bold text-zinc-900 mb-4 uppercase tracking-widest">Connect Socially</p>
               <div className="flex gap-4">
                 <a href="https://github.com/Madhusudan04337" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-[#4A32A1] hover:text-white hover:border-[#4A32A1] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                   <Github className="w-5 h-5" />
@@ -142,7 +142,7 @@ export function Contact() {
           </div>
 
           {/* Right Column: Premium Form Card */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -151,26 +151,26 @@ export function Contact() {
           >
             {/* Decorative Card Glow */}
             <div className="absolute -inset-1 bg-gradient-to-tr from-[#4A32A1]/20 to-orange-100/30 rounded-[32px] blur-xl opacity-50" />
-            
-            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[32px] shadow-2xl p-8 md:p-12">
-              <div className="mb-10">
-                <h3 className="text-3xl font-display font-bold text-zinc-900">Send Me a Message</h3>
-                <div className="h-1.5 w-12 bg-[#4A32A1] rounded-full mt-3" />
+
+            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[32px] shadow-2xl p-6 md:p-10">
+              <div className="mb-8">
+                <h3 className="text-2xl font-display font-bold text-zinc-900">Send Me a Message</h3>
+                <div className="h-1.5 w-10 bg-[#4A32A1] rounded-full mt-3" />
               </div>
 
-              <form ref={form} onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div className="group relative">
                     <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
-                      <input 
+                      <input
                         name="name"
-                        type="text" 
+                        type="text"
                         required
-                        placeholder="John Doe" 
-                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                        placeholder="John Doe"
+                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                       />
                     </div>
                   </div>
@@ -180,12 +180,12 @@ export function Contact() {
                     <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
-                      <input 
+                      <input
                         name="email"
-                        type="email" 
+                        type="email"
                         required
-                        placeholder="john@example.com" 
-                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                        placeholder="john@example.com"
+                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                       />
                     </div>
                   </div>
@@ -196,12 +196,12 @@ export function Contact() {
                   <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Subject</label>
                   <div className="relative">
                     <Type className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
-                    <input 
+                    <input
                       name="subject"
-                      type="text" 
+                      type="text"
                       required
-                      placeholder="Collaboration inquiry" 
-                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                      placeholder="Collaboration inquiry"
+                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                     />
                   </div>
                 </div>
@@ -211,19 +211,19 @@ export function Contact() {
                   <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Message</label>
                   <div className="relative">
                     <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
-                    <textarea 
+                    <textarea
                       name="message"
                       required
-                      placeholder="Tell me about your project..." 
-                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-5 text-[15px] text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300 min-h-[160px] resize-none"
+                      placeholder="Tell me about your project..."
+                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300 min-h-[140px] resize-none"
                     />
                   </div>
                 </div>
 
-                <button 
+                <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full group relative overflow-hidden py-5 rounded-[20px] font-bold text-[16px] transition-all duration-500 shadow-xl active:scale-[0.98]
+                  className={`w-full group relative overflow-hidden py-3.5 rounded-[20px] font-bold text-sm transition-all duration-500 shadow-xl active:scale-[0.98]
                     ${status === 'success' ? 'bg-green-600' : status === 'error' ? 'bg-red-600' : 'bg-zinc-900 hover:bg-[#4A32A1]'} text-white`}
                 >
                   <div className="relative z-10 flex items-center justify-center gap-3">
@@ -238,7 +238,7 @@ export function Contact() {
                     )}
                   </div>
                 </button>
-                
+
                 <p className="text-center text-xs text-zinc-400 font-medium tracking-wide">
                   I usually respond within 24 business hours.
                 </p>

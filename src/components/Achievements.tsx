@@ -20,9 +20,9 @@ function CountUpStat({ data }: { data: any }) {
   }, [inView, count, data.value, durationSec]);
 
   return (
-    <div ref={ref} className="relative z-10 flex flex-col items-center justify-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-zinc-200 hover:border-[#5E35B1]/40 transition-colors group shadow-sm hover:shadow-lg transition-all">
+    <div ref={ref} className="relative z-10 flex flex-col items-center justify-center p-6 rounded-3xl bg-white/80 backdrop-blur-sm border border-zinc-200 hover:border-[#5E35B1]/40 transition-colors group shadow-sm hover:shadow-lg transition-all">
       <div className="absolute inset-0 bg-[#5E35B1]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
-      <div className="text-5xl md:text-6xl font-display font-bold text-[#5E35B1] mb-4 drop-shadow-[0_0_15px_rgba(94,53,177,0.3)]">
+      <div className="text-4xl md:text-5xl font-display font-bold text-[#5E35B1] mb-4 drop-shadow-[0_0_15px_rgba(94,53,177,0.3)]">
         {data.prefix}
         <motion.span>{rounded}</motion.span>
         {data.suffix}
@@ -45,12 +45,12 @@ function FadeInStat({ data }: { data: any }) {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ delay: 0.5, duration: 0.8 }} // fade_in_scale delay & duration
-      className="relative z-10 flex flex-col items-center justify-center p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-zinc-200 hover:border-[#5E35B1]/40 transition-colors group shadow-xl shadow-zinc-200/50"
+      className="relative z-10 flex flex-col items-center justify-center p-6 rounded-3xl bg-white/80 backdrop-blur-sm border border-zinc-200 hover:border-[#5E35B1]/40 transition-colors group shadow-xl shadow-zinc-200/50"
     >
       <div className="absolute inset-0 bg-[#5E35B1]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
 
-      <div className="w-16 h-16 rounded-full bg-[#5E35B1]/20 flex items-center justify-center text-[#5E35B1] border border-[#5E35B1]/30 mb-6 drop-shadow-[0_0_15px_rgba(94,53,177,0.3)]">
-        <span className="text-3xl font-display font-bold">{data.value}</span>
+      <div className="w-14 h-14 rounded-full bg-[#5E35B1]/20 flex items-center justify-center text-[#5E35B1] border border-[#5E35B1]/30 mb-5 drop-shadow-[0_0_15px_rgba(94,53,177,0.3)]">
+        <span className="text-2xl font-display font-bold">{data.value}</span>
       </div>
 
       <div className="text-base text-zinc-800 font-semibold mb-4 text-center max-w-[200px] leading-tight">
@@ -88,7 +88,7 @@ function AchievementCarousel() {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="w-full max-w-6xl relative h-[700px] md:h-[550px] bg-white rounded-[32px] border border-zinc-200/60 shadow-[0_8px_40px_rgb(0,0,0,0.04)] overflow-hidden">
+      <div className="w-full max-w-6xl relative h-[600px] md:h-[480px] bg-white rounded-[32px] border border-zinc-200/60 shadow-[0_8px_40px_rgb(0,0,0,0.04)] overflow-hidden">
 
         <AnimatePresence mode="wait">
           <motion.div 
@@ -104,7 +104,7 @@ function AchievementCarousel() {
               initial={{ x: "-150%", opacity: 0 }}
               animate={{ x: "0%", opacity: 1 }}
               transition={{ duration: 1.5, ease: customEase }}
-              className={`p-8 md:p-12 flex flex-col h-full order-2 md:order-1 ${
+              className={`p-6 md:p-10 flex flex-col h-full order-2 md:order-1 ${
                 currentData.type === 'swiper' 
                   ? 'justify-start pt-4 md:pt-20 items-start text-left' 
                   : 'justify-center'
@@ -114,7 +114,7 @@ function AchievementCarousel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.0, ease: customEase }}
-                className="text-3xl md:text-4xl font-display font-bold text-zinc-900 mb-6 leading-tight"
+                className="text-2xl md:text-3xl font-display font-bold text-zinc-900 mb-6 leading-tight"
               >
                 {currentData.left_panel.header}
               </motion.h4>
@@ -136,7 +136,7 @@ function AchievementCarousel() {
                     href={currentData.left_panel.link} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-[#5E35B1] text-white px-7 py-3 rounded-full text-xs font-semibold transition-all shadow-lg hover:shadow-purple-200"
+                    className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-[#5E35B1] text-white px-6 py-2.5 rounded-full text-xs font-semibold transition-all shadow-lg hover:shadow-purple-200"
                   >
                     {currentData.left_panel.button_text} <ArrowRight className="w-4 h-4" />
                   </a>
@@ -186,7 +186,7 @@ function AchievementCarousel() {
 
 export function Achievements() {
   return (
-    <section className="py-32 px-6 relative overflow-hidden bg-zinc-50 border-t border-zinc-200" id="achievements">
+    <section className="py-20 px-6 relative overflow-hidden bg-zinc-50 border-t border-zinc-200" id="achievements">
       {/* Background Style: curved_vector_wave simulation */}
       <div className="absolute inset-0 w-full h-full pointer-events-none opacity-50 select-none overflow-hidden flex flex-col">
         <svg className="absolute w-full top-0 text-zinc-200 drop-shadow-sm" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -196,9 +196,9 @@ export function Achievements() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h2 className="text-xs uppercase tracking-widest text-[#5E35B1] font-mono mb-4 font-semibold">THE STATS</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-bold text-zinc-900">Milestones & Achievements</h3>
+          <h3 className="text-3xl md:text-5xl font-display font-bold text-zinc-900">Milestones & Achievements</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">

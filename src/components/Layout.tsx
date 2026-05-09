@@ -22,7 +22,7 @@ export function Layout({ children }: { children: ReactNode }) {
       {/* Mobile Header Strip */}
       <div className="md:hidden fixed top-0 left-0.5 right-0.5 h-1 bg-[#4A32A1]/80 z-50" />
 
-      <motion.div 
+      <motion.div
         variants={{
           visible: { y: 0 },
           hidden: { y: "-150%" }
@@ -40,7 +40,7 @@ export function Layout({ children }: { children: ReactNode }) {
               className="flex items-center justify-between w-full"
             >
               {/* Logo Left - Separate */}
-              <div className="w-12 h-12 flex items-center justify-center bg-zinc-900 text-white rounded-full font-display font-bold text-xl tracking-tight shadow-md ml-1 shrink-0">
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 text-white rounded-full font-display font-bold text-lg tracking-tight shadow-md ml-1 shrink-0">
                 M.
               </div>
 
@@ -53,7 +53,7 @@ export function Layout({ children }: { children: ReactNode }) {
                   <a href="#certifications" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Certifications</a>
                   <a href="#achievements" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Achievements</a>
                 </div>
-                <a href="#contact" className="px-7 py-3 bg-[#4A32A1] text-white rounded-full text-sm font-bold hover:bg-[#3D2887] transition-colors shadow-lg shadow-[#4A32A1]/30 whitespace-nowrap">
+                <a href="#contact" className="px-5 py-2.5 bg-[#4A32A1] text-white rounded-full text-xs font-bold hover:bg-[#3D2887] transition-colors shadow-lg shadow-[#4A32A1]/30 whitespace-nowrap">
                   Let's talk
                 </a>
               </div>
@@ -61,8 +61,8 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </nav>
       </motion.div>
-      <main className="flex-1 mt-6 md:mt-28">{children}</main>
-      <footer className="py-12 text-center text-zinc-500 font-mono text-sm border-t border-zinc-200 mt-24">
+      <main className="flex-1 mt-6 md:mt-20">{children}</main>
+      <footer className="py-10 text-center text-zinc-500 font-mono text-xs border-t border-zinc-200 mt-16">
         <p>© {new Date().getFullYear()} Building for the future.</p>
       </footer>
       <MobileFAB />
