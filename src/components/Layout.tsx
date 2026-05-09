@@ -41,8 +41,8 @@ export function Layout({ children }: { children: ReactNode }) {
               className="flex items-center justify-between w-full"
             >
               {/* Logo Left - Separate */}
-              <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 text-white rounded-full font-display font-bold text-lg tracking-tight shadow-md ml-1 shrink-0">
-                M.
+              <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 rounded-full overflow-hidden shadow-md ml-1 shrink-0">
+                <img src="/favicon.png" alt="Madhusudan" className="w-full h-full object-cover" />
               </div>
 
               {/* Nav Links + CTA Right - Grouped inside inner pill */}
