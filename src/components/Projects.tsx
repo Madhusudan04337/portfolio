@@ -33,10 +33,10 @@ const ProjectCard = ({ project, isDark }: ProjectCardProps) => {
         <p>{project.leftPanel.body}</p>
         <div className="card-actions">
           <a href={project.liveUrl} className="action-btn" target="_blank" rel="noreferrer">
-            <ExternalLink size={16} /> Live
+            <ExternalLink size={18} /> Live
           </a>
           <a href={project.repoUrl} className="action-btn" target="_blank" rel="noreferrer">
-            <Github size={16} /> Repo
+            <Github size={18} /> Repo
           </a>
         </div>
       </section>

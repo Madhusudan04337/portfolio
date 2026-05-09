@@ -13,40 +13,46 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} // ease-out-slow
-          className="space-y-8"
+          className="space-y-6"
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
+          <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
             {aboutData.headline}
           </h2>
-          <p className="text-zinc-600 text-lg leading-relaxed">
+          <p className="text-zinc-600 text-base leading-relaxed">
             {aboutData.bodyText}
           </p>
 
-          <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2 p-3.5 rounded-xl border border-zinc-200 bg-white/50">
-              <Code2 className="w-5 h-5 text-[#4A32A1] mb-1" />
-              <h4 className="font-medium text-zinc-900">Current Focus</h4>
-              <p className="text-sm text-zinc-500">{aboutData.context.focus}</p>
+          <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="p-3 rounded-xl border border-zinc-200 bg-white/50">
+              <div className="flex items-center gap-2 mb-1.5">
+                <Code2 className="w-4 h-4 text-[#4A32A1]" />
+                <h4 className="font-semibold text-zinc-900 text-sm">Current Focus</h4>
+              </div>
+              <p className="text-xs text-zinc-500 leading-snug">{aboutData.context.focus}</p>
             </div>
-            <div className="flex flex-col gap-2 p-3.5 rounded-xl border border-zinc-200 bg-white/50">
-              <Database className="w-5 h-5 text-[#A8C69F] mb-1" />
-              <h4 className="font-medium text-zinc-900">Core Expertise</h4>
-              <p className="text-sm text-zinc-500">{aboutData.context.background}</p>
+            <div className="p-3 rounded-xl border border-zinc-200 bg-white/50">
+              <div className="flex items-center gap-2 mb-1.5">
+                <Database className="w-4 h-4 text-[#A8C69F]" />
+                <h4 className="font-semibold text-zinc-900 text-sm">Core Expertise</h4>
+              </div>
+              <p className="text-xs text-zinc-500 leading-snug">{aboutData.context.background}</p>
             </div>
-            <div className="flex flex-col gap-2 p-3.5 rounded-xl border border-zinc-200 bg-white/50 sm:col-span-2">
-              <Layers className="w-5 h-5 text-[#FFB800] mb-1" />
-              <h4 className="font-medium text-zinc-900">Recent Milestone</h4>
-              <p className="text-sm text-zinc-500">{aboutData.context.milestone}</p>
+            <div className="p-3 rounded-xl border border-zinc-200 bg-white/50 sm:col-span-2">
+              <div className="flex items-center gap-2 mb-1.5">
+                <Layers className="w-4 h-4 text-[#FFB800]" />
+                <h4 className="font-semibold text-zinc-900 text-sm">Recent Milestone</h4>
+              </div>
+              <p className="text-xs text-zinc-500 leading-snug">{aboutData.context.milestone}</p>
             </div>
           </div>
 
           <div>
             <a
               href={aboutData.cta.href}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#4A32A1]/30 text-[#4A32A1] hover:bg-[#4A32A1]/10 hover:border-[#4A32A1]/50 transition-all group"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#4A32A1]/30 text-[#4A32A1] text-sm font-medium hover:bg-[#4A32A1]/10 hover:border-[#4A32A1]/50 transition-all group"
             >
               {aboutData.cta.text}
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </motion.div>
