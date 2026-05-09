@@ -40,7 +40,7 @@
 	background-color: rgba(20, 20, 20, 0.6);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
-    
+
 	border: var(--outline-w) solid var(--border-color);
 	border-radius: 16px;
 	box-shadow: 0 0 var(--shadow-blur) 0 var(--shadow-color);
@@ -61,7 +61,7 @@
 	max-width: var(--mobile--w);
 	width: 100%;
 	position: relative;
-    
+
 	padding: 2.5rem 2rem;
 	display: flex;
 	flex-direction: column;
@@ -77,13 +77,13 @@
 	--border-color: var(--shadow-color);
 
 	background-color: rgba(10, 10, 10, 0.95);
-	opacity: 1;	
-	
+	opacity: 1;
+
 	outline-offset: calc(var(--outline-w) / 2);
-	
+
 	scale: 1;
 	rotate: 0deg;
-	
+
 	transition-property: border, box-shadow, outline-offset, opacity, rotate, scale, z-index;
 	transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
 }
@@ -92,7 +92,7 @@
 	z-index: 5;
 }
 
-.exp-card:hover	{
+.exp-card:hover {
 	z-index: 6;
 }
 
@@ -119,36 +119,4 @@
 .exp-card:nth-of-type(5) {
 	--rotation: -5deg;
 	--theme-color: oklch(var(--purple));
-}
-
-@media (max-width: 768px) {
-	.exp-card__container {
-		flex-wrap: nowrap;
-		overflow-x: auto;
-		justify-content: flex-start;
-		padding: 2rem 1rem 3rem 1rem;
-		scroll-snap-type: x mandatory;
-		gap: 1.5rem;
-		-webkit-overflow-scrolling: touch;
-		scrollbar-width: none;
-	}
-
-	.exp-card__container::-webkit-scrollbar {
-		display: none;
-	}
-
-	.exp-card {
-		flex-shrink: 0;
-		scroll-snap-align: center;
-		rotate: 0deg !important;
-		scale: 0.95;
-		min-width: 300px;
-		width: 85vw;
-		max-width: 340px;
-	}
-
-	.exp-card:focus-within,
-	.exp-card:hover {
-		scale: 1;
-	}
 }
