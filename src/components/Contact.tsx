@@ -69,7 +69,7 @@ export function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-[#4A32A1] text-xs font-bold uppercase tracking-wider"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-[#4A32A1] text-[10px] md:text-xs font-bold uppercase tracking-widest"
               >
                 <div className="w-2 h-2 rounded-full bg-[#4A32A1] animate-pulse" />
                 Available for projects
@@ -79,7 +79,7 @@ export function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-6xl font-display font-bold text-zinc-900 leading-tight"
+                className="text-3xl md:text-5xl font-display font-bold text-zinc-900 leading-tight"
               >
                 Let's build <br />
                 <span className="text-[#4A32A1]">something </span>
@@ -115,8 +115,8 @@ export function Contact() {
                     <item.icon className="w-5 h-5 text-[#4A32A1]" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">{item.label}</p>
-                    <p className="text-zinc-900 font-medium text-base">{item.value}</p>
+                    <p className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest mb-1">{item.label}</p>
+                    <p className="text-zinc-900 font-semibold text-sm md:text-base">{item.value}</p>
                   </div>
                 </motion.div>
               ))}
@@ -129,7 +129,7 @@ export function Contact() {
               transition={{ delay: 0.6 }}
               className="pt-8 border-t border-zinc-200"
             >
-              <p className="text-xs font-bold text-zinc-900 mb-4 uppercase tracking-widest">Connect Socially</p>
+              <p className="text-[10px] md:text-xs font-bold text-zinc-900 mb-4 uppercase tracking-widest">Connect Socially</p>
               <div className="flex gap-4">
                 <a href="https://github.com/Madhusudan04337" target="_blank" rel="noreferrer" className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 hover:bg-[#4A32A1] hover:text-white hover:border-[#4A32A1] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                   <Github className="w-5 h-5" />
@@ -154,7 +154,7 @@ export function Contact() {
 
             <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[32px] shadow-2xl p-6 md:p-10">
               <div className="mb-8">
-                <h3 className="text-2xl font-display font-bold text-zinc-900">Send Me a Message</h3>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-zinc-900">Send Me a Message</h3>
                 <div className="h-1.5 w-10 bg-[#4A32A1] rounded-full mt-3" />
               </div>
 
@@ -162,7 +162,7 @@ export function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div className="group relative">
-                    <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
+                    <label className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                       <input
@@ -177,7 +177,7 @@ export function Contact() {
 
                   {/* Email */}
                   <div className="group relative">
-                    <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
+                    <label className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                       <input

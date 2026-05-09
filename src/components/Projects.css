@@ -92,8 +92,6 @@
 }
 
 .morph-card > section p {
-  font-size: 0.95rem;
-  line-height: 1.4;
   color: var(--text-color);
   margin-bottom: 0.75rem;
   display: -webkit-box;
@@ -103,8 +101,6 @@
 }
 
 .morph-card > section .hover-title {
-  font-size: 1.25rem;
-  font-weight: 700;
   color: var(--title-color-hover);
   margin: 0;
   margin-bottom: 0.5rem;

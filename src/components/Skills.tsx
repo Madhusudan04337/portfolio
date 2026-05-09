@@ -19,7 +19,7 @@ export function Skills() {
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-[12px] font-medium mb-4 border border-teal-100/50"
+            className="inline-flex items-center gap-2 bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-[10px] md:text-xs font-semibold uppercase tracking-widest mb-4 border border-teal-100/50"
           >
             <Sparkles className="w-4 h-4" />
             What I work with
@@ -28,13 +28,13 @@ export function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold text-zinc-900 tracking-tight"
+            className="text-3xl md:text-5xl font-display font-bold text-zinc-900 tracking-tight"
           >
             Skills & Technologies
           </motion.h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillsData.map((category, idx) => (
             <motion.div
               key={category.category}
@@ -42,18 +42,18 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-[20px] p-3.5 md:p-5 flex flex-col items-start text-left border border-zinc-100/80 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all w-full sm:w-[calc(50%-12px)] lg:max-w-[280px]"
+              className="bg-white rounded-[20px] p-3.5 md:p-5 flex flex-col items-start text-left border border-zinc-100/80 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all w-full"
             >
               <div className="flex items-center gap-3 mb-4 w-full">
                 <div className="w-9 h-9 bg-teal-50/80 rounded-xl flex items-center justify-center shrink-0">
                   {iconMap[category.icon]}
                 </div>
-                <h3 className="font-display font-semibold text-base text-zinc-900 leading-tight">{category.category}</h3>
+                <h3 className="font-display font-bold text-lg text-zinc-900 leading-tight">{category.category}</h3>
               </div>
 
               <div className="flex flex-wrap justify-start gap-1.5 w-full">
                 {category.skills.map(skill => (
-                  <span key={skill} className="bg-zinc-50 text-zinc-600 text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-zinc-100/80 tracking-tight">
+                  <span key={skill} className="bg-zinc-50 text-zinc-600 text-sm font-medium px-3.5 py-1.5 rounded-full border border-zinc-100/80 tracking-tight">
                     {skill}
                   </span>
                 ))}

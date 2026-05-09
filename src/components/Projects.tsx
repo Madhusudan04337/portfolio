@@ -29,8 +29,8 @@ const ProjectCard = ({ project, isDark }: ProjectCardProps) => {
         <h2>{project.leftPanel.header}</h2>
       </div>
       <section>
-        <h2 className="hover-title">{project.leftPanel.header}</h2>
-        <p>{project.leftPanel.body}</p>
+        <h2 className="hover-title text-xl font-bold">{project.leftPanel.header}</h2>
+        <p className="text-sm md:text-base leading-relaxed">{project.leftPanel.body}</p>
         <div className="card-actions">
           <a href={project.liveUrl} className="action-btn" target="_blank" rel="noreferrer">
             <ExternalLink size={18} /> Live
@@ -54,7 +54,7 @@ export const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8 md:mb-12">
 
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-zinc-900 mb-3 tracking-tight">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-zinc-900 mb-3 tracking-tight">
             Interactive Projects
           </h2>
           <p className="text-lg text-zinc-600 max-w-2xl mx-auto">

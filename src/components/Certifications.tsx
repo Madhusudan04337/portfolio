@@ -29,7 +29,7 @@ export function Certifications() {
     <section id="certifications" className="py-24 px-6 bg-[#FAFAFA]">
       <div className="max-w-[1100px] mx-auto">
         <div className="mb-12 text-center">
-           <h2 className="text-4xl md:text-5xl font-display font-bold mb-3 text-zinc-800 tracking-tight">
+           <h2 className="text-3xl md:text-5xl font-display font-bold mb-3 text-zinc-800 tracking-tight">
              Certifications & Credentials
            </h2>
         </div>
@@ -53,21 +53,21 @@ export function Certifications() {
                 className="bg-white rounded-[20px] p-5 border border-zinc-100 shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] transition-all flex flex-col h-full"
               >
                 <div className="flex justify-between items-start mb-4 gap-4">
-                   <h3 className="text-[17px] font-bold text-zinc-800 leading-snug max-w-[200px]">
+                   <h3 className="text-base md:text-lg font-bold text-zinc-800 leading-snug max-w-[200px]">
                      {cert.title}
                    </h3>
                    <div className="flex flex-col items-end gap-2 shrink-0">
-                     <div className="bg-[#2B5B57] text-white text-[11px] font-bold px-3 py-1 rounded-full">
+                     <div className="bg-[#2B5B57] text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full">
                        {cert.year}
                      </div>
-                     <div className="bg-[#EDF2F1] text-[#2B5B57] text-[10px] font-semibold px-2.5 py-1 rounded">
+                     <div className="bg-[#EDF2F1] text-[#2B5B57] text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded">
                        {cert.level}
                      </div>
                    </div>
                 </div>
                 
                 <div className="mb-6">
-                   <p className="text-[15px] font-medium text-zinc-600">
+                   <p className="text-sm md:text-base font-medium text-zinc-600">
                      {cert.issuer}
                    </p>
                 </div>
@@ -77,7 +77,7 @@ export function Certifications() {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2 border border-zinc-200 rounded-full flex items-center justify-center gap-2 hover:bg-zinc-50 transition-colors text-[13px] font-semibold text-zinc-700"
+                    className="w-full py-2 border border-zinc-200 rounded-full flex items-center justify-center gap-2 hover:bg-zinc-50 transition-colors text-sm font-semibold text-zinc-700"
                   >
                     <Award className="w-4 h-4" /> View Credential
                   </a>

@@ -120,3 +120,35 @@
 	--rotation: -5deg;
 	--theme-color: oklch(var(--purple));
 }
+
+@media (max-width: 768px) {
+	.exp-card__container {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		justify-content: flex-start;
+		padding: 2rem 1rem 3rem 1rem;
+		scroll-snap-type: x mandatory;
+		gap: 1.5rem;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+
+	.exp-card__container::-webkit-scrollbar {
+		display: none;
+	}
+
+	.exp-card {
+		flex-shrink: 0;
+		scroll-snap-align: center;
+		rotate: 0deg !important;
+		scale: 0.95;
+		min-width: 300px;
+		width: 85vw;
+		max-width: 340px;
+	}
+
+	.exp-card:focus-within,
+	.exp-card:hover {
+		scale: 1;
+	}
+}

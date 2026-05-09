@@ -38,10 +38,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease }}
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight text-zinc-900 leading-[1.15] mb-3">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-zinc-900 leading-[1.1] mb-3">
               {heroData.title}
             </h1>
-            <p className="text-[#5E35B1] font-mono text-sm md:text-base font-semibold uppercase tracking-wider mb-5">
+            <p className="text-[#5E35B1] font-mono text-xs md:text-sm font-semibold uppercase tracking-widest mb-5">
               {heroData.role}
             </p>
           </motion.div>
@@ -123,13 +123,13 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.6, ease }}
             className="absolute top-4 -left-4 sm:-left-12 md:top-10 md:-left-20 bg-white rounded-[12px] md:rounded-[18px] shadow-[0_12px_40px_rgb(0,0,0,0.08)] px-3 py-3 md:px-4 md:py-3 w-[120px] md:w-[200px] border border-zinc-100 z-20 flex flex-col items-start"
           >
-            <div className="font-bold text-zinc-900 text-[12px] md:text-[18px] mb-1">{heroData.name}</div>
-            <div className="text-[#5E35B1] font-semibold text-[9px] md:text-[13px] mb-2 md:mb-3 leading-tight">Python Specialist</div>
+            <div className="font-bold text-zinc-900 text-sm md:text-lg mb-1">{heroData.name}</div>
+            <div className="text-[#5E35B1] font-semibold text-[10px] md:text-xs mb-2 md:mb-3 leading-tight uppercase tracking-wider">Python Specialist</div>
 
             <div className="w-full h-[1px] bg-zinc-100 mb-2 md:mb-3" />
 
-            <div className="text-[8px] md:text-[10px] text-zinc-400 font-bold uppercase tracking-wider mb-1">Current Tech Stack:</div>
-            <div className="font-bold text-zinc-900 text-[10px] md:text-[14px] leading-tight">Django • FastAPI • React</div>
+            <div className="text-[9px] md:text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Current Tech Stack:</div>
+            <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">Django • FastAPI • React</div>
           </motion.div>
 
           {/* Floating Circle (Right) */}
@@ -152,7 +152,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 1, ease }}
             className="absolute bottom-10 -right-4 sm:-right-6 md:bottom-10 md:-right-12 bg-white rounded-full shadow-[0_12px_40px_rgb(0,0,0,0.08)] pl-4 pr-1.5 py-1.5 flex items-center justify-between gap-4 z-20 border border-zinc-100"
           >
-            <span className="font-medium text-zinc-800 text-[14px]">{heroData.credentialsLabel || "Credentials Earned"}</span>
+            <span className="font-medium text-zinc-800 text-sm">{heroData.credentialsLabel || "Credentials Earned"}</span>
             <div className="bg-[#F16E00] text-white text-[12px] font-bold w-8 h-8 rounded-full flex items-center justify-center shrink-0">
               {heroData.credentialsCount || 0}
             </div>

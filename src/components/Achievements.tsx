@@ -114,7 +114,7 @@ function AchievementCarousel() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.0, ease: customEase }}
-                className="text-3xl md:text-4xl font-display font-bold text-zinc-900 mb-6 leading-tight"
+                className="text-2xl md:text-4xl font-display font-bold text-zinc-900 mb-6 leading-tight"
               >
                 {currentData.left_panel.header}
               </motion.h4>
@@ -197,8 +197,8 @@ export function Achievements() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-xs uppercase tracking-widest text-[#5E35B1] font-mono mb-4 font-semibold">THE STATS</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-bold text-zinc-900">Milestones & Achievements</h3>
+          <h2 className="text-[10px] md:text-xs uppercase tracking-widest text-[#5E35B1] font-mono mb-4 font-bold">THE STATS</h2>
+          <h3 className="text-3xl md:text-5xl font-display font-bold text-zinc-900 tracking-tight">Milestones & Achievements</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-5xl mx-auto">

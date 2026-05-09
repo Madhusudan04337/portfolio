@@ -15,7 +15,7 @@ export function About() {
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} // ease-out-slow
           className="space-y-6"
         >
-          <h2 className="text-2xl md:text-4xl font-display font-bold leading-tight">
+          <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight">
             {aboutData.headline}
           </h2>
           <p className="text-zinc-600 text-base leading-relaxed">
