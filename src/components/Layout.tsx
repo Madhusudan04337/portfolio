@@ -2,6 +2,7 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { ReactNode, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { MobileFAB } from "./MobileFAB";
+import { BottomNav } from "./BottomNav";
 
 
 export function Layout({ children }: { children: ReactNode }) {
@@ -66,7 +67,8 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="py-10 text-center text-zinc-500 font-mono text-sm border-t border-zinc-200 mt-16">
         <p>© {new Date().getFullYear()} Building for the future.</p>
       </footer>
-      <MobileFAB />
+      {/* <MobileFAB /> */}
+      <BottomNav />
     </div>
 
   );

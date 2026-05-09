@@ -21,18 +21,22 @@ export function Hero() {
   }, [count]);
 
   return (
-    <section className="relative min-h-[calc(100vh-8rem)] flex items-center justify-center pt-24 pb-20 px-6 bg-white overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center pt-20 md:pt-32 pb-20 px-6 bg-white overflow-hidden" id="hero">
       {/* Background Graphic (Purple overlapping shapes) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 hidden sm:block">
-        <div className="absolute right-[-20%] md:right-[-10%] top-[10%] w-[600px] h-[600px] md:w-[800px] md:h-[800px] border-[80px] md:border-[120px] border-[#4A32A1]/5 rounded-full transform rotate-45" />
-        <div className="absolute right-[-30%] md:right-[-20%] top-[40%] w-[500px] h-[500px] md:w-[600px] md:h-[600px] border-[80px] md:border-[100px] border-[#4A32A1]/10 rounded-[80px] transform -rotate-12" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute right-[-10%] md:right-[-10%] top-[5%] md:top-[10%] w-[400px] h-[400px] md:w-[800px] md:h-[800px] border-[40px] md:border-[120px] border-[#4A32A1]/5 rounded-full transform rotate-45" />
+        <div className="absolute left-[-20%] bottom-[-10%] w-[300px] h-[300px] bg-teal-50/50 rounded-full blur-[100px] md:hidden" />
+        <div className="absolute right-[-30%] md:right-[-20%] top-[40%] w-[500px] h-[500px] md:w-[600px] md:h-[600px] border-[80px] md:border-[100px] border-[#4A32A1]/10 rounded-[80px] transform -rotate-12 hidden sm:block" />
       </div>
+
+      {/* Grainy Noise Texture Overlay */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-[1] bg-noise-pattern" />
 
 
       <div className="w-full max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center relative z-10">
 
         {/* Left Side: Typography */}
-        <div className="space-y-6 md:space-y-8 text-left max-w-xl mx-auto lg:mx-0 pt-8 lg:pt-0">
+        <div className="space-y-6 md:space-y-8 text-center lg:text-left max-w-xl mx-auto lg:mx-0 pt-4 md:pt-8 lg:pt-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +63,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease }}
-            className="pt-2 md:pt-4 flex flex-wrap items-center gap-4"
+            className="pt-2 md:pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4"
           >
             <a
               href={resumePdf}

@@ -154,3 +154,37 @@
 .morph-card:hover::after {
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .projectsSection {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 1rem 1rem 2rem 1rem;
+    gap: 1.25rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .morph-card {
+    flex-shrink: 0;
+    width: 85vw;
+    max-width: 320px;
+    scroll-snap-align: center;
+  }
+
+  /* Force hover state visuals on mobile cards as they are swiped */
+  .morph-card > section {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .morph-card .title-overlay {
+    opacity: 0;
+  }
+  .morph-card > img {
+    aspect-ratio: 1.8 / 1;
+  }
+  .morph-card::after {
+    opacity: 0;
+  }
+}
