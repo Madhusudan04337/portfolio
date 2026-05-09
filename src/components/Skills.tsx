@@ -12,7 +12,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export function Skills() {
   return (
-    <section className="py-4 md:py-10 px-4 bg-[#FAFAFA]" id="skills">
+    <section className="py-16 md:py-24 px-4 bg-[#FAFAFA]" id="skills">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-4 md:mb-8">
           <motion.div
@@ -28,7 +28,7 @@ export function Skills() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-4xl font-display font-bold text-zinc-900 tracking-tight"
+            className="text-4xl md:text-5xl font-display font-bold text-zinc-900 tracking-tight"
           >
             Skills & Technologies
           </motion.h2>
@@ -48,12 +48,12 @@ export function Skills() {
                 <div className="w-9 h-9 bg-teal-50/80 rounded-xl flex items-center justify-center shrink-0">
                   {iconMap[category.icon]}
                 </div>
-                <h3 className="font-display font-semibold text-sm text-zinc-900 leading-tight">{category.category}</h3>
+                <h3 className="font-display font-semibold text-base text-zinc-900 leading-tight">{category.category}</h3>
               </div>
 
               <div className="flex flex-wrap justify-start gap-1.5 w-full">
                 {category.skills.map(skill => (
-                  <span key={skill} className="bg-zinc-50 text-zinc-600 text-[12px] font-medium px-3 py-1 rounded-full border border-zinc-100/80 tracking-tight">
+                  <span key={skill} className="bg-zinc-50 text-zinc-600 text-[13px] font-medium px-3.5 py-1.5 rounded-full border border-zinc-100/80 tracking-tight">
                     {skill}
                   </span>
                 ))}

@@ -62,7 +62,7 @@ export function Layout({ children }: { children: ReactNode }) {
         </nav>
       </motion.div>
       <main className="flex-1 mt-6 md:mt-20">{children}</main>
-      <footer className="py-10 text-center text-zinc-500 font-mono text-xs border-t border-zinc-200 mt-16">
+      <footer className="py-10 text-center text-zinc-500 font-mono text-sm border-t border-zinc-200 mt-16">
         <p>© {new Date().getFullYear()} Building for the future.</p>
       </footer>
       <MobileFAB />
