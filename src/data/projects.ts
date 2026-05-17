@@ -4,6 +4,7 @@ import electionAssistantImg from "../assets/projects/election-assistant.png";
 import kitchenVisionImg from "../assets/projects/kitchen-vision.png";
 import evChargeImg from "../assets/projects/ev-charge.png";
 import nexilaCloneImg from "../assets/projects/nexila-clone.png";
+import gitLensImg from "../assets/projects/gitlens.png";
 
 export const showcaseData = [
   {
@@ -89,5 +90,19 @@ export const showcaseData = [
     },
     liveUrl: "https://madhusudan04337.github.io/nexila-technologies-clone/",
     repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git",
+  },
+  {
+    id: "007",
+    leftPanel: {
+      header: "GitLens",
+      body: "AI-powered GitHub developer card generator that creates premium, responsive profile cards using GitHub data, Gemini AI, React, FastAPI, and GraphQL APIs.",
+      buttonText: "Generate Card",
+    },
+    rightPanel: {
+      visualAsset: gitLensImg,
+      cardStyle: "dynamic_3d_render",
+    },
+    liveUrl: "https://github-card-frontend-719852595489.us-central1.run.app/",
+    repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
   },
 ];
