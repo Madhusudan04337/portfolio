@@ -103,7 +103,7 @@ export const showcaseData = [
       visualAsset: gitLensImg,
       cardStyle: "dynamic_3d_render",
     },
-    liveUrl: "https://github-card-frontend-719852595489.us-central1.run.app/",
+    liveUrl: "https://github-card-frontend-143544260816.us-central1.run.app/",
     repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
   },
   {
