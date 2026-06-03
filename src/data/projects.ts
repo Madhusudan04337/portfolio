@@ -5,6 +5,7 @@ import kitchenVisionImg from "../assets/projects/kitchen-vision.png";
 import evChargeImg from "../assets/projects/ev-charge.png";
 import nexilaCloneImg from "../assets/projects/nexila-clone.png";
 import gitLensImg from "../assets/projects/gitlens.png";
+import resumeBuilderImg from "../assets/projects/resume-builder.png";
 
 export const showcaseData = [
   {
@@ -104,5 +105,19 @@ export const showcaseData = [
     },
     liveUrl: "https://github-card-frontend-719852595489.us-central1.run.app/",
     repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
+  },
+  {
+    id: "008",
+    leftPanel: {
+      header: "Resume Builder",
+      body: "AI-powered resume builder with real-time preview, modular sections, and PDF export. Built to maintain a consistent resume template and automate data extraction using Claude.",
+      buttonText: "Build Resume",
+    },
+    rightPanel: {
+      visualAsset: resumeBuilderImg,
+      cardStyle: "dynamic_3d_render",
+    },
+    liveUrl: "https://mdk-resume-builder.netlify.app/",
+    repoUrl: "https://github.com/Madhusudan04337/resume-builder.git",
   },
 ];
