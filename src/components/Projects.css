@@ -18,12 +18,12 @@
   border-radius: 1.5rem;
   padding: 0.5rem;
   width: 20rem;
-  height: 23rem;
+  height: auto;
   overflow: hidden;
   position: relative;
   font-family: var(--font-sans);
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .morph-card.dark {
@@ -35,20 +35,11 @@
   --button-color-hover: #3f3f46;
 }
 
-.morph-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
-}
-
 .morph-card > img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 1.1rem;
-  transition: aspect-ratio 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.morph-card:hover > img {
   aspect-ratio: 1.8 / 1;
 }
 
@@ -58,7 +49,8 @@
   left: 1.5rem;
   right: 1.5rem;
   z-index: 10;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .title-overlay h2 {
@@ -70,23 +62,11 @@
   letter-spacing: -0.02em;
 }
 
-.morph-card:hover .title-overlay {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
-}
-
 .morph-card > section {
   padding: 1rem 0.85rem;
   height: auto;
   display: flex;
   flex-direction: column;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
-}
-
-.morph-card:hover > section {
   opacity: 1;
   transform: translateY(0);
 }
@@ -148,10 +128,6 @@
   background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7));
   border-radius: 1.5rem;
   pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.morph-card:hover::after {
   opacity: 0;
 }
 
@@ -173,7 +149,6 @@
     scroll-snap-align: center;
   }
 
-  /* Force hover state visuals on mobile cards as they are swiped */
   .morph-card > section {
     opacity: 1;
     transform: translateY(0);
