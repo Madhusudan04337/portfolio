@@ -9,6 +9,20 @@ import resumeBuilderImg from "../assets/projects/resume-builder.png";
 
 export const showcaseData = [
   {
+    id: "000",
+    leftPanel: {
+      header: "Mobile Banking App",
+      body: "A UI/UX concept design for a mobile banking experience created in Figma, focused on clean navigation, secure task flows, and a polished, app-first interface.",
+      buttonText: "Open Prototype",
+      role: "UI/UX"
+    },
+    rightPanel: {
+      cardStyle: "elevated_white_container",
+      previewText: "Figma Prototype"
+    },
+    liveUrl: "https://www.figma.com/proto/7SjMbQ3jwCh7Zb8uVNfO6k/ACE_Project_Madhusudan?node-id=228-47&p=f&viewport=155%2C263%2C0.06&t=SCQ14BykKy9QqfJS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=233%3A265&page-id=0%3A1"
+  },
+  {
     id: "001",
     leftPanel: {
       header: "Niral-Verse 2K26",

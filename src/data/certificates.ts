@@ -2,6 +2,14 @@ import genAiCert from "../assets/internships/GenAI.pdf";
 
 export const certificationsData = [
   {
+    id: "cert_11",
+    title: "UI/UX",
+    year: "2026",
+    level: "Professional",
+    issuer: "Sunstone School of Technology",
+    link: "https://d3s27eh1wskpwv.cloudfront.net/placement/3a476435-d5cc-4612-9eb3-2bf5cfd56756.pdf",
+  },
+  {
     id: "cert_00",
     title: "Generative AI Fundamentals",
     year: "2025",

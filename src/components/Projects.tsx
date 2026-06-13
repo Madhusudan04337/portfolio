@@ -10,13 +10,15 @@ interface ProjectCardProps {
       header: string;
       body: string;
       buttonText: string;
+      role?: string;
     };
     rightPanel: {
-      visualAsset: string;
+      visualAsset?: string;
       cardStyle: string;
+      previewText?: string;
     };
     liveUrl: string;
-    repoUrl: string;
+    repoUrl?: string;
   };
   isDark: boolean;
   className?: string;
@@ -25,20 +27,35 @@ interface ProjectCardProps {
 const ProjectCard = ({ project, isDark, className = "" }: ProjectCardProps) => {
   return (
     <div className={`morph-card ${isDark ? 'dark' : ''} ${className}`}>
-      <img src={project.rightPanel.visualAsset} alt={project.leftPanel.header} />
+      {project.rightPanel.visualAsset ? (
+        <img src={project.rightPanel.visualAsset} alt={project.leftPanel.header} />
+      ) : (
+        <div className={`project-preview ${project.rightPanel.cardStyle}`}>
+          <div className="project-preview-chip">Figma</div>
+          <h2>{project.leftPanel.header}</h2>
+          <p>{project.rightPanel.previewText ?? project.leftPanel.body}</p>
+        </div>
+      )}
       <div className="title-overlay">
         <h2>{project.leftPanel.header}</h2>
       </div>
       <section>
         <h2 className="hover-title text-xl font-bold">{project.leftPanel.header}</h2>
+        {project.leftPanel.role ? (
+          <p className="project-role text-xs uppercase tracking-[0.2em] font-semibold">
+            {project.leftPanel.role}
+          </p>
+        ) : null}
         <p className="text-sm md:text-base leading-relaxed">{project.leftPanel.body}</p>
         <div className="card-actions">
           <a href={project.liveUrl} className="action-btn" target="_blank" rel="noreferrer">
-            <ExternalLink size={18} /> Live
+            <ExternalLink size={18} /> {project.leftPanel.buttonText}
           </a>
-          <a href={project.repoUrl} className="action-btn" target="_blank" rel="noreferrer">
-            <Github size={18} /> Repo
-          </a>
+          {project.repoUrl ? (
+            <a href={project.repoUrl} className="action-btn" target="_blank" rel="noreferrer">
+              <Github size={18} /> Repo
+            </a>
+          ) : null}
         </div>
       </section>
     </div>

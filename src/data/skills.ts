@@ -15,6 +15,11 @@ export const skillsData = [
     skills: ["React.js", "TypeScript", "Tailwind CSS", "Bootstrap 5", "GSAP"]
   },
   {
+    category: "Design & Prototyping",
+    icon: "sparkles",
+    skills: ["Figma", "UI/UX"]
+  },
+  {
     category: "Tools & Concepts",
     icon: "server",
     skills: ["REST APIs", "Postman", "Version Control", "Git", "GitHub", "Data Structures", "Problem Solving"]

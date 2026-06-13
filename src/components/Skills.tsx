@@ -5,6 +5,7 @@ import { skillsData } from "../data";
 const iconMap: Record<string, React.ReactNode> = {
   code: <Code className="w-4 h-4 text-teal-700" />,
   palette: <Palette className="w-4 h-4 text-teal-700" />,
+  sparkles: <Sparkles className="w-4 h-4 text-teal-700" />,
   server: <Server className="w-4 h-4 text-teal-700" />,
   database: <Database className="w-4 h-4 text-teal-700" />,
   cloud: <Cloud className="w-4 h-4 text-teal-700" />
