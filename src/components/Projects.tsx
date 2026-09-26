@@ -1,166 +1,68 @@
-import { useState, useRef } from 'react';
-import { ExternalLink, Github, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+import { ExternalLink, Github, ArrowLeft, ArrowRight } from 'lucide-react';
 import { showcaseData } from '../data';
 import './Projects.css';
 
-interface ProjectCardProps {
-  project: {
-    id: string;
-    leftPanel: {
-      header: string;
-      body: string;
-      buttonText: string;
-      role?: string;
-    };
-    rightPanel: {
-      visualAsset?: string;
-      cardStyle: string;
-      previewText?: string;
-    };
-    liveUrl: string;
-    repoUrl?: string;
-  };
-  isDark: boolean;
-  className?: string;
-}
-
-const ProjectCard = ({ project, isDark, className = "" }: ProjectCardProps) => {
-  return (
-    <div className={`morph-card ${isDark ? 'dark' : ''} ${className}`}>
-      {project.rightPanel.visualAsset ? (
-        <img src={project.rightPanel.visualAsset} alt={project.leftPanel.header} />
-      ) : (
-        <div className={`project-preview ${project.rightPanel.cardStyle}`}>
-          <div className="project-preview-chip">Figma</div>
-          <h2>{project.leftPanel.header}</h2>
-          <p>{project.rightPanel.previewText ?? project.leftPanel.body}</p>
-        </div>
-      )}
-      <div className="title-overlay">
-        <h2>{project.leftPanel.header}</h2>
-      </div>
-      <section>
-        <h2 className="hover-title text-xl font-bold">{project.leftPanel.header}</h2>
-        {project.leftPanel.role ? (
-          <p className="project-role text-xs uppercase tracking-[0.2em] font-semibold">
-            {project.leftPanel.role}
-          </p>
-        ) : null}
-        <p className="text-sm md:text-base leading-relaxed">{project.leftPanel.body}</p>
-        <div className="card-actions">
-          <a href={project.liveUrl} className="action-btn" target="_blank" rel="noreferrer">
-            <ExternalLink size={18} /> {project.leftPanel.buttonText}
-          </a>
-          {project.repoUrl ? (
-            <a href={project.repoUrl} className="action-btn" target="_blank" rel="noreferrer">
-              <Github size={18} /> Repo
-            </a>
-          ) : null}
-        </div>
-      </section>
-    </div>
-  );
-};
-
 export const Projects = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  const showMore = () => setVisibleCount(showcaseData.length);
-
-  const handleScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      const progress = (scrollLeft / (scrollWidth - clientWidth)) * 100;
-      setScrollProgress(progress || 0);
-    }
-  };
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const { clientWidth } = scrollRef.current;
-      const scrollAmount = direction === 'left' ? -clientWidth * 0.8 : clientWidth * 0.8;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const project = showcaseData[activeIndex];
+  const goTo = (index: number) => setActiveIndex((index + showcaseData.length) % showcaseData.length);
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-zinc-50 relative overflow-hidden">
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-8 md:mb-12">
-
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-zinc-900 mb-3 tracking-tight">
-            Interactive Projects
-          </h2>
-          <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-            Showcasing dynamic UI interactions and morphing components.
-          </p>
-        </div>
-
-        <div className="relative group">
-          <div 
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="projectsSection no-scrollbar"
-          >
-            {showcaseData.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                isDark={index % 2 !== 0}
-                className={index >= visibleCount ? "md:hidden" : ""}
-              />
-            ))}
+    <section id="projects" className="projects-section py-24 md:py-32 bg-zinc-50 relative overflow-hidden">
+      <div className="projects-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <header className="projects-heading">
+          <div>
+            <p className="projects-eyebrow">Selected work</p>
+            <h2>Projects</h2>
+            <span className="projects-heading-rule" />
           </div>
+          <div className="projects-controls">
+            <span className="projects-count"><span>{String(activeIndex + 1).padStart(2, '0')}</span> / {String(showcaseData.length).padStart(2, '0')}</span>
+            <button type="button" aria-label="Previous project" onClick={() => goTo(activeIndex - 1)}><ArrowLeft size={19} /></button>
+            <button type="button" aria-label="Next project" onClick={() => goTo(activeIndex + 1)}><ArrowRight size={19} /></button>
+          </div>
+        </header>
 
-          {/* Mobile Navigation & Progress */}
-          <div className="md:hidden flex items-center justify-between mt-8 px-2">
-             <div className="flex-1 h-1 bg-zinc-200 rounded-full overflow-hidden mr-4">
-                <div 
-                  className="h-full bg-zinc-900 transition-all duration-300"
-                  style={{ width: `${Math.max(5, scrollProgress)}%` }}
-                />
-             </div>
-             <div className="flex gap-2">
-                <button 
-                  onClick={() => scroll('left')}
-                  className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-600 shadow-sm active:scale-90 transition-transform"
-                >
-                  <ChevronLeft size={20} />
-                </button>
-                <button 
-                  onClick={() => scroll('right')}
-                  className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center text-white shadow-md active:scale-90 transition-transform"
-                >
-                  <ChevronRight size={20} />
-                </button>
-             </div>
+        <article className="featured-project" key={project.id}>
+          <div className="featured-project-visual">
+            {project.rightPanel.visualAsset ? (
+              <img src={project.rightPanel.visualAsset} alt={`${project.leftPanel.header} project preview`} />
+            ) : (
+              <div className={`project-preview ${project.rightPanel.cardStyle}`}>
+                <span className="project-preview-chip">Figma prototype</span>
+                <div><h3>{project.leftPanel.header}</h3><p>{project.rightPanel.previewText ?? project.leftPanel.body}</p></div>
+              </div>
+            )}
           </div>
-        </div>
+          <div className="featured-project-content">
+            <h3>{project.leftPanel.header}</h3>
+            {project.leftPanel.role && <p className="project-role">{project.leftPanel.role}</p>}
+            <p className="featured-project-description">{project.leftPanel.body}</p>
+            <p className="project-detail-label">Highlights</p>
+            <ul className="project-details">
+              {(project.features ?? [project.leftPanel.body]).map((feature) => <li key={feature}>{feature}</li>)}
+            </ul>
+            {project.technologies?.length ? (
+              <div className="project-technology-group">
+                <p className="project-detail-label">Technologies</p>
+                <ul className="project-tags" aria-label="Technologies">
+                {project.technologies.map((technology) => <li key={technology}>{technology}</li>)}
+                </ul>
+              </div>
+            ) : null}
+            <div className="featured-project-actions">
+              {project.repoUrl && <a className="project-action project-action-secondary" href={project.repoUrl} target="_blank" rel="noreferrer"><Github size={17} /> View source</a>}
+              <a className="project-action project-action-primary" href={project.liveUrl} target="_blank" rel="noreferrer"><ExternalLink size={17} /> {project.leftPanel.buttonText}</a>
+            </div>
+          </div>
+        </article>
 
-        {visibleCount < showcaseData.length ? (
-          <div className="hidden md:block mt-10 md:mt-16 text-center">
-            <button
-              onClick={showMore}
-              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-zinc-900 bg-white border border-zinc-200 rounded-full shadow-sm hover:bg-zinc-50 hover:text-zinc-900 transition-colors duration-200 gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900"
-            >
-              View More
-              <ArrowRight size={18} />
-            </button>
-          </div>
-        ) : (
-          <div className="hidden md:block mt-10 md:mt-16 text-center">
-            <button
-              onClick={() => setVisibleCount(3)}
-              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-zinc-900 bg-white border border-zinc-200 rounded-full shadow-sm hover:bg-zinc-50 hover:text-zinc-900 transition-colors duration-200 gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-900"
-            >
-              View Less
-              <ArrowRight size={18} className="rotate-180" />
-            </button>
-          </div>
-        )}
+        <nav className="projects-pagination" aria-label="Choose a project">
+          {showcaseData.map((item, index) => (
+            <button key={item.id} type="button" aria-label={`Show ${item.leftPanel.header}`} aria-current={activeIndex === index ? 'true' : undefined} onClick={() => goTo(index)} className={activeIndex === index ? 'active' : ''} />
+          ))}
+        </nav>
       </div>
     </section>
   );
