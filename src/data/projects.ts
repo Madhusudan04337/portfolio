@@ -165,7 +165,7 @@ export const showcaseData = [
       'Responsive developer profile cards',
     ],
     technologies: ['React', 'FastAPI', 'Gemini AI', 'GraphQL'],
-    liveUrl: "https://github-dev-card-api-143544260816.us-central1.run.app/",
+    liveUrl: "https://gitlens-47p7.onrender.com/",
     repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
   },
   {
