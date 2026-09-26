@@ -85,7 +85,7 @@ export const showcaseData = [
       'Accessible, free voter resource',
     ],
     technologies: ['Web app', 'Accessibility', 'Civic tech'],
-    liveUrl: "https://voter-education-779344188603.asia-south1.run.app/",
+    liveUrl: "",
     repoUrl: "https://github.com/Madhusudan04337/election-assistant.git",
   },
   {

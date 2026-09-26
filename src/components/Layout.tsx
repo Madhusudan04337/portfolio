@@ -50,8 +50,8 @@ export function Layout({ children }: { children: ReactNode }) {
                 <div className="hidden lg:flex items-center gap-1 bg-zinc-50/80 backdrop-blur-sm rounded-full px-3 py-1.5 border border-zinc-200/60">
                   <a href="#about" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">About</a>
                   <a href="#skills" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Skills</a>
-                  <a href="#projects" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Projects</a>
                   <a href="#experience" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Experience</a>
+                  <a href="#projects" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Projects</a>
                   <a href="#certifications" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Certifications</a>
                   <a href="#achievements" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Achievements</a>
                 </div>
