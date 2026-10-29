@@ -12,7 +12,7 @@ export const skillsData = [
   {
     category: "Frontend Frameworks",
     icon: "palette",
-    skills: ["React.js", "TypeScript", "Tailwind CSS", "Bootstrap 5", "GSAP"]
+    skills: ["React.js", "Tailwind CSS", "Bootstrap 5"]
   },
   {
     category: "Design & Prototyping",
@@ -27,6 +27,6 @@ export const skillsData = [
   {
     category: "Data Science",
     icon: "cloud",
-    skills: ["NumPy", "Pandas", "Machine Learning", "PowerBI", "Tableau"]
+    skills: ["NumPy", "Pandas","PowerBI", "Tableau"]
   }
 ];

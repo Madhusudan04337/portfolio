@@ -80,21 +80,5 @@ export const certificationsData = [
     level: "Professional",
     issuer: "LinkedIn Learning",
     link: "https://www.linkedin.com/learning/certificates/648020ccbace73b0266bbb8f52d5c290572ddd24eb268aaf9ad4b797ac1f1913",
-  },
-  {
-    id: "cert_09",
-    title: "GitHub Foundations Cert Prep",
-    year: "2025",
-    level: "Technical",
-    issuer: "LinkedIn Learning",
-    link: "https://www.linkedin.com/learning/certificates/e2d4e5e9a24e6339381a98b6ed8a4bdfa05ccd57dfacd3a3d159e4b7d6303ecc",
-  },
-  {
-    id: "cert_10",
-    title: "Learning Docker",
-    year: "2025",
-    level: "Technical",
-    issuer: "LinkedIn Learning",
-    link: "https://www.linkedin.com/learning/certificates/268b3387471cba317d0ed54624af9c6c1854a8880f780b5404f8aef94601e793",
-  },
+  }
 ];
