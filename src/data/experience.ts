@@ -72,5 +72,16 @@ export const experienceData = [
     ],
     themeColor: "oklch(70% 0.2 280)",
     certificateLink: genAiCert
+  },
+  {
+    id: "exp_06",
+    company: "AccioJob",
+    role: "MERN Stack Developer Trainee (Ongoing)",
+    period: "Ongoing",
+    bullets: [
+      "Currently enrolled in the AccioJob MERN Stack Developer training program, building full-stack web applications using MongoDB, Express.js, React.js, and Node.js",
+      "Developing backend skills in REST APIs, database management, and application architecture while strengthening problem-solving through guided project work"
+    ],
+    themeColor: "oklch(72% 0.18 160)",
   }
 ];

@@ -2,6 +2,7 @@ import googleAiLabImg from "../assets/achievements/1.png";
 import buildWithAiImg from "../assets/achievements/2.jpg";
 import researchPaperImg from "../assets/achievements/3.jpg";
 import researchPaperCert from "../assets/achievements/3c.jpg";
+import promptWarsVolunteerImg from "../assets/achievements/v1.png";
 
 export const achievementsData = [
   {
@@ -63,6 +64,17 @@ export const achievementsCarouselData = [
     },
     right_panel: {
       visual_asset: googleAiLabImg,
+      card_style: "dynamic_3d_render"
+    }
+  },
+  {
+    project_id: "prompt-wars-volunteer",
+    left_panel: {
+      header: "Prompt Wars Hackathon – Volunteer",
+      body: "Volunteered at the Prompt Wars Hackathon in Chennai alongside Google Developer Groups (GDG) and Hack2Skill teams. Supported event operations, managed participant check-ins, and helped ensure smooth event coordination while engaging with the developer community.",
+    },
+    right_panel: {
+      visual_asset: promptWarsVolunteerImg,
       card_style: "dynamic_3d_render"
     }
   },

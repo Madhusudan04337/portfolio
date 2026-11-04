@@ -73,6 +73,9 @@ export function About() {
             <img
               src="https://images.unsplash.com/photo-1605379399642-870262d3d051?auto=format&fit=crop&q=80&w=1200"
               alt="Technology Environment"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
               className="w-full h-full object-cover opacity-90"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-[#4A32A1]/10 to-transparent mix-blend-overlay" />

@@ -90,6 +90,11 @@ export function Showcase() {
                    <img 
                      src={project.rightPanel.visualAsset} 
                      alt={project.leftPanel.header}
+                     loading="lazy"
+                     decoding="async"
+                     fetchPriority="low"
+                     width={1200}
+                     height={900}
                      className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"
                    />
                 </motion.div>

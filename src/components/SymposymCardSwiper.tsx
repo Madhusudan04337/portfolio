@@ -30,6 +30,11 @@ export function SymposymCardSwiper({ standalone = true }: { standalone?: boolean
                             <img 
                                 src={img} 
                                 alt={`Symposium Victory ${idx + 1}`}
+                                loading="lazy"
+                                decoding="async"
+                                fetchPriority="low"
+                                width={900}
+                                height={1200}
                                 className="collage-bento-img" 
                             />
                             <div className="collage-bento-overlay">

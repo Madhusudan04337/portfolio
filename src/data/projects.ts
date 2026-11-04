@@ -71,26 +71,6 @@ export const showcaseData = [
   {
     id: "003",
     leftPanel: {
-      header: "Election Assistant",
-      body: "A definitive 12-step guide to voting in India. Built with accessibility in mind, providing simple, fast, and 100% free voter education to help first-time voters navigate eligibility and the polling process.",
-      buttonText: "Launch Assistant",
-    },
-    rightPanel: {
-      visualAsset: electionAssistantImg,
-      cardStyle: "dynamic_3d_render",
-    },
-    features: [
-      '12-step voting guide',
-      'First-time voter education',
-      'Accessible, free voter resource',
-    ],
-    technologies: ['Web app', 'Accessibility', 'Civic tech'],
-    liveUrl: "",
-    repoUrl: "https://github.com/Madhusudan04337/election-assistant.git",
-  },
-  {
-    id: "004",
-    leftPanel: {
       header: "Kitchen Vision",
       body: "AI-powered culinary assistant that utilizes computer vision to identify ingredients and suggest recipes. Built with Streamlit for a seamless, interactive user experience.",
       buttonText: "Analyze Ingredients",
@@ -109,7 +89,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/kitchen-vision.git",
   },
   {
-    id: "005",
+    id: "004",
     leftPanel: {
       header: "EV Charge Demand",
       body: "Advanced data visualization and predictive analytics for Electric Vehicle charging demand. Leverages machine learning models to forecast infrastructure needs based on urban data.",
@@ -129,7 +109,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git",
   },
   {
-    id: "006",
+    id: "005",
     leftPanel: {
       header: "Nexila Technologies Clone",
       body: "A pixel-perfect corporate website clone demonstrating high-fidelity frontend reproduction skills. Features complex layouts, responsive design, and smooth scroll interactions.",
@@ -149,7 +129,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git",
   },
   {
-    id: "007",
+    id: "006",
     leftPanel: {
       header: "GitLens",
       body: "AI-powered GitHub developer card generator that creates premium, responsive profile cards using GitHub data, Gemini AI, React, FastAPI, and GraphQL APIs.",
@@ -169,7 +149,7 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
   },
   {
-    id: "008",
+    id: "007",
     leftPanel: {
       header: "Resume Builder",
       body: "AI-powered resume builder with real-time preview, modular sections, and PDF export. Built to maintain a consistent resume template and automate data extraction using Claude.",

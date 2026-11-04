@@ -159,6 +159,11 @@ function AchievementCarousel() {
                     <img 
                       src={currentData.right_panel.visual_asset} 
                       alt={currentData.left_panel.header}
+                      loading="lazy"
+                      decoding="async"
+                      fetchPriority="low"
+                      width={1200}
+                      height={900}
                       className="w-full h-full object-cover rounded-2xl shadow-xl"
                     />
                   </div>

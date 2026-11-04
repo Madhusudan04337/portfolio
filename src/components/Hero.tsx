@@ -113,6 +113,9 @@ export function Hero() {
             <img
               src={profileImg}
               alt="Portrait"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[85%] h-auto max-h-[90%] object-cover object-bottom mix-blend-multiply drop-shadow-xl"
               style={{ filter: "brightness(1.05) contrast(1.05)" }}
             />
@@ -133,7 +136,7 @@ export function Hero() {
             <div className="w-full h-[1px] bg-zinc-100 mb-2 md:mb-3" />
 
             <div className="text-[9px] md:text-[10px] text-zinc-400 font-bold uppercase tracking-widest mb-1">Current Tech Stack:</div>
-            <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">Django • FastAPI • React</div>
+            <div className="font-bold text-zinc-900 text-xs md:text-sm leading-tight">JavaScript • React</div>
           </motion.div>
 
           {/* Floating Circle (Right) */}

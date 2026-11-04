@@ -27,7 +27,15 @@ export const Projects = () => {
         <article className="featured-project" key={project.id}>
           <div className="featured-project-visual">
             {project.rightPanel.visualAsset ? (
-              <img src={project.rightPanel.visualAsset} alt={`${project.leftPanel.header} project preview`} />
+              <img
+                src={project.rightPanel.visualAsset}
+                alt={`${project.leftPanel.header} project preview`}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                width={1200}
+                height={900}
+              />
             ) : (
               <div className={`project-preview ${project.rightPanel.cardStyle}`}>
                 <span className="project-preview-chip">Figma prototype</span>

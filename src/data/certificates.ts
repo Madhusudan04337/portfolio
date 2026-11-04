@@ -72,13 +72,5 @@ export const certificationsData = [
     level: "Technical",
     issuer: "GeeksforGeeks",
     link: "https://www.geeksforgeeks.org/certificate/9d7ab728e66eacf9ab3b1120a4b438ba",
-  },
-  {
-    id: "cert_08",
-    title: "Introduction to Career Skills in Software Development",
-    year: "2024",
-    level: "Professional",
-    issuer: "LinkedIn Learning",
-    link: "https://www.linkedin.com/learning/certificates/648020ccbace73b0266bbb8f52d5c290572ddd24eb268aaf9ad4b797ac1f1913",
   }
 ];
