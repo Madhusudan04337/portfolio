@@ -20,7 +20,7 @@ export const certificationsData = [
   {
     id: "cert_01",
     title: "Full Stack Web Development",
-    year: "2024",
+    year: "2025",
     level: "Professional",
     issuer: "GeeksforGeeks",
     link: "https://media.geeksforgeeks.org/courses/certificates/b78f0b8255e47727dd2e7727040c27e3.pdf",
@@ -28,7 +28,7 @@ export const certificationsData = [
   {
     id: "cert_02",
     title: "AI Fundamentals",
-    year: "2024",
+    year: "2026",
     level: "Technical",
     issuer: "Coursera",
     link: "https://www.coursera.org/account/accomplishments/verify/4UR43O9M67VB",
@@ -60,7 +60,7 @@ export const certificationsData = [
   {
     id: "cert_06",
     title: "Python for Beginners",
-    year: "2024",
+    year: "2025",
     level: "Foundational",
     issuer: "Udemy",
     link: "https://www.udemy.com/certificate/UC-26bc582f-450f-45d7-9337-cbe91dc6baad/",
