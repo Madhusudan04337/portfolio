@@ -6,8 +6,18 @@ import { showcaseData } from "../data";
 const transitionEase = [0.22, 1, 0.36, 1];
 const INTERVAL_MS = 6000;
 
+function preloadImage(src?: string) {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
+}
+
 export function Showcase() {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const imageSlides = showcaseData
+    .map((item) => item.rightPanel.visualAsset)
+    .filter((asset): asset is string => Boolean(asset));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -15,6 +25,20 @@ export function Showcase() {
     }, INTERVAL_MS);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    // Warm up the first couple of carousel assets before user interaction.
+    preloadImage(imageSlides[0]);
+    preloadImage(imageSlides[1]);
+  }, [imageSlides]);
+
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % showcaseData.length;
+    const prevIndex = (currentIndex - 1 + showcaseData.length) % showcaseData.length;
+
+    preloadImage(showcaseData[nextIndex]?.rightPanel.visualAsset);
+    preloadImage(showcaseData[prevIndex]?.rightPanel.visualAsset);
+  }, [currentIndex]);
 
   const project = showcaseData[currentIndex];
 
@@ -90,9 +114,9 @@ export function Showcase() {
                    <img 
                      src={project.rightPanel.visualAsset} 
                      alt={project.leftPanel.header}
-                     loading="lazy"
+                     loading="eager"
                      decoding="async"
-                     fetchPriority="low"
+                     fetchPriority="high"
                      width={1200}
                      height={900}
                      className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700"

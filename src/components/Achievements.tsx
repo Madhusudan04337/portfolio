@@ -4,6 +4,12 @@ import { achievementsData, achievementsCarouselData } from "../data";
 import { MapPin, Calendar, ArrowRight } from "lucide-react";
 import { SymposymCardSwiper } from "./SymposymCardSwiper";
 
+function preloadImage(src?: string) {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
+}
+
 // For stats using count_up_interpolation
 function CountUpStat({ data }: { data: any }) {
   const ref = useRef(null);
@@ -78,6 +84,23 @@ function AchievementCarousel() {
     }, 6000);
     return () => clearInterval(timer);
   }, [isPaused]);
+
+  useEffect(() => {
+    const imageSlides = achievementsCarouselData.filter(
+      (item) => item.type !== "swiper" && item.right_panel?.visual_asset
+    );
+
+    preloadImage(imageSlides[0]?.right_panel.visual_asset);
+    preloadImage(imageSlides[1]?.right_panel.visual_asset);
+  }, []);
+
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % achievementsCarouselData.length;
+    const prevIndex = (currentIndex - 1 + achievementsCarouselData.length) % achievementsCarouselData.length;
+
+    preloadImage(achievementsCarouselData[nextIndex]?.right_panel?.visual_asset);
+    preloadImage(achievementsCarouselData[prevIndex]?.right_panel?.visual_asset);
+  }, [currentIndex]);
 
   const currentData = achievementsCarouselData[currentIndex];
   const customEase = [0.22, 1, 0.36, 1];
@@ -159,9 +182,9 @@ function AchievementCarousel() {
                     <img 
                       src={currentData.right_panel.visual_asset} 
                       alt={currentData.left_panel.header}
-                      loading="lazy"
+                      loading="eager"
                       decoding="async"
-                      fetchPriority="low"
+                      fetchPriority="high"
                       width={1200}
                       height={900}
                       className="w-full h-full object-cover rounded-2xl shadow-xl"

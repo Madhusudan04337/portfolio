@@ -1,8 +1,8 @@
-import googleAiLabImg from "../assets/achievements/1.png";
+import googleAiLabImg from "../assets/achievements/1.webp";
 import buildWithAiImg from "../assets/achievements/2.jpg";
 import researchPaperImg from "../assets/achievements/3.jpg";
 import researchPaperCert from "../assets/achievements/3c.jpg";
-import promptWarsVolunteerImg from "../assets/achievements/v1.png";
+import promptWarsVolunteerImg from "../assets/achievements/v1.webp";
 
 export const achievementsData = [
   {

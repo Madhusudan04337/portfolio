@@ -1,11 +1,11 @@
 import niralVerseImg from "../assets/projects/niral-verse.png";
-import travelloImg from "../assets/projects/travello.png";
+import travelloImg from "../assets/projects/travello.webp";
 import electionAssistantImg from "../assets/projects/election-assistant.png";
-import kitchenVisionImg from "../assets/projects/kitchen-vision.png";
+import kitchenVisionImg from "../assets/projects/kitchen-vision.webp";
 import evChargeImg from "../assets/projects/ev-charge.png";
 import nexilaCloneImg from "../assets/projects/nexila-clone.png";
-import gitLensImg from "../assets/projects/gitlens.png";
-import resumeBuilderImg from "../assets/projects/resume-builder.png";
+import gitLensImg from "../assets/projects/gitlens.webp";
+import resumeBuilderImg from "../assets/projects/resume-builder.webp";
 
 export const showcaseData = [
   {

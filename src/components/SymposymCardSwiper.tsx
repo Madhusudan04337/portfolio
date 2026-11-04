@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./SymposymCardSwiper.css";
 
 // Import images
