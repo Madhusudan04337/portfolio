@@ -1,11 +1,4 @@
-import niralVerseImg from "../assets/projects/niral-verse.png";
-import travelloImg from "../assets/projects/travello.webp";
 import electionAssistantImg from "../assets/projects/election-assistant.png";
-import kitchenVisionImg from "../assets/projects/kitchen-vision.webp";
-import evChargeImg from "../assets/projects/ev-charge.png";
-import nexilaCloneImg from "../assets/projects/nexila-clone.png";
-import gitLensImg from "../assets/projects/gitlens.webp";
-import resumeBuilderImg from "../assets/projects/resume-builder.webp";
 
 export const showcaseData = [
   {
@@ -17,6 +10,7 @@ export const showcaseData = [
       role: "UI/UX"
     },
     rightPanel: {
+      visualAsset: "/assets/aistudio/image_f3c32581.png",
       cardStyle: "elevated_white_container",
       previewText: "Figma Prototype"
     },
@@ -36,7 +30,7 @@ export const showcaseData = [
       buttonText: "View Portal",
     },
     rightPanel: {
-      visualAsset: niralVerseImg,
+      visualAsset: "/assets/aistudio/image_81b55a80.png",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -56,7 +50,7 @@ export const showcaseData = [
       buttonText: "Explore Travello",
     },
     rightPanel: {
-      visualAsset: travelloImg,
+      visualAsset: "/assets/aistudio/image_118f032b.png",
       cardStyle: "elevated_white_container",
     },
     features: [
@@ -76,7 +70,7 @@ export const showcaseData = [
       buttonText: "Analyze Ingredients",
     },
     rightPanel: {
-      visualAsset: kitchenVisionImg,
+      visualAsset: "/assets/aistudio/image_7578546d.png",
       cardStyle: "elevated_white_container",
     },
     features: [
@@ -96,7 +90,7 @@ export const showcaseData = [
       buttonText: "View Analytics",
     },
     rightPanel: {
-      visualAsset: evChargeImg,
+      visualAsset: "/assets/aistudio/image_05b97254.png",
       cardStyle: "motion_graphic_video",
     },
     features: [
@@ -116,7 +110,7 @@ export const showcaseData = [
       buttonText: "View Clone",
     },
     rightPanel: {
-      visualAsset: nexilaCloneImg,
+      visualAsset: "/assets/aistudio/image_d606e57c.png",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -136,7 +130,7 @@ export const showcaseData = [
       buttonText: "Generate Card",
     },
     rightPanel: {
-      visualAsset: gitLensImg,
+      visualAsset: "/assets/aistudio/image_ca04496c.png",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -156,7 +150,7 @@ export const showcaseData = [
       buttonText: "Build Resume",
     },
     rightPanel: {
-      visualAsset: resumeBuilderImg,
+      visualAsset: "/assets/aistudio/image_4a3209fe.png",
       cardStyle: "dynamic_3d_render",
     },
     features: [

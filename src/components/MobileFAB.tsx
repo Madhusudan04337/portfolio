@@ -20,8 +20,8 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { label: "About", href: "#about", icon: User },
-  { label: "Skills", href: "#skills", icon: Code },
   { label: "Experience", href: "#experience", icon: Briefcase },
+  { label: "Skills", href: "#skills", icon: Code },
   { label: "Projects", href: "#projects", icon: Layers },
   { label: "Certifications", href: "#certifications", icon: Award },
   { label: "Achievements", href: "#achievements", icon: Trophy },

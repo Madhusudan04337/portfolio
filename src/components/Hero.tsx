@@ -5,7 +5,7 @@ import { heroData } from "../data";
 import profileImg from "../assets/profile.jpeg";
 import resumePdf from "../assets/Madhusudan_cv_7719.pdf";
 
-const ease = [0.4, 0, 0.2, 1];
+const ease = [0.4, 0, 0.2, 1] as const;
 
 export function Hero() {
   const count = useMotionValue(0);

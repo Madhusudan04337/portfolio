@@ -33,8 +33,6 @@ export const Projects = () => {
                 loading="lazy"
                 decoding="async"
                 fetchPriority="low"
-                width={1200}
-                height={900}
               />
             ) : (
               <div className={`project-preview ${project.rightPanel.cardStyle}`}>

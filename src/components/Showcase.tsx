@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { showcaseData } from "../data";
 
-const transitionEase = [0.22, 1, 0.36, 1];
+const transitionEase = [0.22, 1, 0.36, 1] as const;
 const INTERVAL_MS = 6000;
 
 function preloadImage(src?: string) {

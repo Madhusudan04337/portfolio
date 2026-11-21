@@ -103,7 +103,7 @@ function AchievementCarousel() {
   }, [currentIndex]);
 
   const currentData = achievementsCarouselData[currentIndex];
-  const customEase = [0.22, 1, 0.36, 1];
+  const customEase = [0.22, 1, 0.36, 1] as const;
 
   return (
     <div
