@@ -2,7 +2,7 @@ import { animate, motion, useMotionValue, useTransform } from "motion/react";
 import { useEffect } from "react";
 import { Github, Linkedin } from "lucide-react";
 import { heroData } from "../data";
-import profileImg from "../assets/profile.jpeg";
+import profileImg from "../assets/profile.webp";
 import resumePdf from "../assets/Madhusudan_cv_7719.pdf";
 
 const ease = [0.4, 0, 0.2, 1] as const;

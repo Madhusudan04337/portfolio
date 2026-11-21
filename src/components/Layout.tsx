@@ -42,7 +42,7 @@ export function Layout({ children }: { children: ReactNode }) {
             >
               {/* Logo Left - Separate */}
               <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 rounded-full overflow-hidden shadow-md ml-1 shrink-0">
-                <img src="/favicon.png" alt="Madhusudan" className="w-full h-full object-cover" />
+                <img src="/logo.webp" alt="Madhusudan" className="w-full h-full object-cover" />
               </div>
 
               {/* Nav Links + CTA Right - Grouped inside inner pill */}

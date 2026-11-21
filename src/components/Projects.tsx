@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ExternalLink, Github, ArrowLeft, ArrowRight } from 'lucide-react';
 import { showcaseData } from '../data';
 import './Projects.css';
@@ -7,6 +7,16 @@ export const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const project = showcaseData[activeIndex];
   const goTo = (index: number) => setActiveIndex((index + showcaseData.length) % showcaseData.length);
+
+  useEffect(() => {
+    const nextIdx = (activeIndex + 1) % showcaseData.length;
+    const prevIdx = (activeIndex - 1 + showcaseData.length) % showcaseData.length;
+    [showcaseData[nextIdx]?.rightPanel.visualAsset, showcaseData[prevIdx]?.rightPanel.visualAsset].forEach((src) => {
+      if (!src) return;
+      const img = new Image();
+      img.src = src;
+    });
+  }, [activeIndex]);
 
   return (
     <section id="projects" className="projects-section py-24 md:py-32 bg-zinc-50 relative overflow-hidden">
@@ -30,9 +40,9 @@ export const Projects = () => {
               <img
                 src={project.rightPanel.visualAsset}
                 alt={`${project.leftPanel.header} project preview`}
-                loading="lazy"
+                loading="eager"
                 decoding="async"
-                fetchPriority="low"
+                fetchPriority="high"
               />
             ) : (
               <div className={`project-preview ${project.rightPanel.cardStyle}`}>

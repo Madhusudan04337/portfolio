@@ -1,7 +1,7 @@
-import edunetFrontendCert from "../assets/internships/Frontend_development_edunet.jpg";
-import edunetAiCert from "../assets/internships/Ai_and_data_analysis_edunet.jpg";
-import uptoskillsCert from "../assets/internships/web_development_uptoskills.jpg";
-import nexillaCert from "../assets/internships/frontend_development_nexilla.jpg";
+import edunetFrontendCert from "../assets/internships/Frontend_development_edunet.webp";
+import edunetAiCert from "../assets/internships/Ai_and_data_analysis_edunet.webp";
+import uptoskillsCert from "../assets/internships/web_development_uptoskills.webp";
+import nexillaCert from "../assets/internships/frontend_development_nexilla.webp";
 import genAiCert from "../assets/internships/GenAI.pdf";
 
 export const experienceData = [

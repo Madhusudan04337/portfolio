@@ -1,4 +1,3 @@
-import electionAssistantImg from "../assets/projects/election-assistant.png";
 
 export const showcaseData = [
   {
@@ -10,7 +9,7 @@ export const showcaseData = [
       role: "UI/UX"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_f3c32581.png",
+      visualAsset: "/assets/aistudio/image_f3c32581.webp",
       cardStyle: "elevated_white_container",
       previewText: "Figma Prototype"
     },
@@ -30,7 +29,7 @@ export const showcaseData = [
       buttonText: "View Portal",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_81b55a80.png",
+      visualAsset: "/assets/aistudio/image_81b55a80.webp",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -50,7 +49,7 @@ export const showcaseData = [
       buttonText: "Explore Travello",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_118f032b.png",
+      visualAsset: "/assets/aistudio/image_118f032b.webp",
       cardStyle: "elevated_white_container",
     },
     features: [
@@ -70,7 +69,7 @@ export const showcaseData = [
       buttonText: "Analyze Ingredients",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_7578546d.png",
+      visualAsset: "/assets/aistudio/image_7578546d.webp",
       cardStyle: "elevated_white_container",
     },
     features: [
@@ -90,7 +89,7 @@ export const showcaseData = [
       buttonText: "View Analytics",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_05b97254.png",
+      visualAsset: "/assets/aistudio/image_05b97254.webp",
       cardStyle: "motion_graphic_video",
     },
     features: [
@@ -110,7 +109,7 @@ export const showcaseData = [
       buttonText: "View Clone",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_d606e57c.png",
+      visualAsset: "/assets/aistudio/image_d606e57c.webp",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -130,7 +129,7 @@ export const showcaseData = [
       buttonText: "Generate Card",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_ca04496c.png",
+      visualAsset: "/assets/aistudio/image_ca04496c.webp",
       cardStyle: "dynamic_3d_render",
     },
     features: [
@@ -150,7 +149,7 @@ export const showcaseData = [
       buttonText: "Build Resume",
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_4a3209fe.png",
+      visualAsset: "/assets/aistudio/image_4a3209fe.webp",
       cardStyle: "dynamic_3d_render",
     },
     features: [

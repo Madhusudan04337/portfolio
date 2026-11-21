@@ -1,13 +1,13 @@
 import "./SymposymCardSwiper.css";
 
 // Import images
-import img1 from "../assets/symposyms/1.jpg";
-import img2 from "../assets/symposyms/2.jpg";
-import img3 from "../assets/symposyms/3.jpg";
-import img4 from "../assets/symposyms/4.jpg";
-import img5 from "../assets/symposyms/5.jpg";
-import img6 from "../assets/symposyms/6.jpg";
-import img7 from "../assets/symposyms/7.jpg";
+import img1 from "../assets/symposyms/1.webp";
+import img2 from "../assets/symposyms/2.webp";
+import img3 from "../assets/symposyms/3.webp";
+import img4 from "../assets/symposyms/4.webp";
+import img5 from "../assets/symposyms/5.webp";
+import img6 from "../assets/symposyms/6.webp";
+import img7 from "../assets/symposyms/7.webp";
 
 export function SymposymCardSwiper({ standalone = true }: { standalone?: boolean }) {
   const images = [img1, img2, img3, img4, img5, img6, img7];
