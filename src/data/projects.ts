@@ -1,46 +1,5 @@
 export const showcaseData = [
   {
-    id: "000",
-    leftPanel: {
-      header: "Mobile Banking App",
-      body: "Designed a modern mobile banking experience in Figma, focusing on intuitive navigation, secure financial workflows, and clean interfaces for seamless digital banking.",
-      buttonText: "Open Prototype",
-      role: "UI/UX"
-    },
-    rightPanel: {
-      visualAsset: "/assets/aistudio/bank-of-baroda-app-redesign.webp",
-      cardStyle: "elevated_white_container",
-      previewText: "Figma Prototype"
-    },
-    features: [
-      "Mobile-first banking interface",
-      "Secure financial task workflows",
-      "Interactive Figma prototyping"
-    ],
-    technologies: ["Figma", "UI/UX", "Prototyping"],
-    liveUrl: "https://www.figma.com/proto/7SjMbQ3jwCh7Zb8uVNfO6k/ACE_Project_Madhusudan?node-id=228-47&p=f&viewport=155%2C263%2C0.06&t=SCQ14BykKy9QqfJS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=233%3A265&page-id=0%3A1"
-  },
-  {
-    id: "001",
-    leftPanel: {
-      header: "Niral-Verse 2K26",
-      body: "Engineered the annual technical fest portal for Hindustan College of Arts & Science, featuring immersive digital visuals, event countdowns, and symposium registration workflows.",
-      buttonText: "View Portal"
-    },
-    rightPanel: {
-      visualAsset: "/assets/aistudio/niral-verse-2k26.webp",
-      cardStyle: "dynamic_3d_render"
-    },
-    features: [
-      "Live event countdown experience",
-      "Online symposium registration workflow",
-      "Immersive digital rain visuals"
-    ],
-    technologies: ["React", "TypeScript", "Web UI"],
-    liveUrl: "https://niral-verse2k26.netlify.app/",
-    repoUrl: "https://github.com/Madhusudan04337/niral-verse2k26.git"
-  },
-  {
     id: "002",
     leftPanel: {
       header: "Travello",
@@ -59,6 +18,26 @@ export const showcaseData = [
     technologies: ["Python", "Django", "PostgreSQL"],
     liveUrl: "https://travello-web.onrender.com/",
     repoUrl: "https://github.com/Madhusudan04337/travello-web.git"
+  },
+  {
+    id: "007",
+    leftPanel: {
+      header: "Resume Builder",
+      body: "Developed an AI-powered resume builder featuring modular sections, real-time previews, automated data extraction, and PDF generation for streamlined resume creation.",
+      buttonText: "Build Resume"
+    },
+    rightPanel: {
+      visualAsset: "/assets/aistudio/mdk-resume-ai.webp",
+      cardStyle: "dynamic_3d_render"
+    },
+    features: [
+      "Modular resume editing sections",
+      "Real-time document preview",
+      "AI-assisted extraction and PDF export"
+    ],
+    technologies: ["React", "Claude AI", "PDF export"],
+    liveUrl: "https://mdk-resume-builder.netlify.app/",
+    repoUrl: "https://github.com/Madhusudan04337/resume-builder.git"
   },
   {
     id: "003",
@@ -81,46 +60,6 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/kitchen-vision.git"
   },
   {
-    id: "004",
-    leftPanel: {
-      header: "EV Charge Demand",
-      body: "Developed a predictive analytics platform for electric vehicle charging demand, combining machine learning models and interactive visualizations to explore urban infrastructure requirements.",
-      buttonText: "View Analytics"
-    },
-    rightPanel: {
-      visualAsset: "/assets/aistudio/ev-nexus-forecaster.webp",
-      cardStyle: "motion_graphic_video"
-    },
-    features: [
-      "EV charging demand visualizations",
-      "Machine learning demand forecasting",
-      "Urban infrastructure data insights"
-    ],
-    technologies: ["Python", "Machine learning", "Data visualization"],
-    liveUrl: "https://evvehiclechargedemand-duf5ypvrvpkmt2muqpabcn.streamlit.app/",
-    repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git"
-  },
-  {
-    id: "005",
-    leftPanel: {
-      header: "Nexila Technologies Clone",
-      body: "Recreated a corporate website with high visual accuracy, responsive layouts, and smooth scrolling interactions, demonstrating practical frontend development and interface implementation skills.",
-      buttonText: "View Clone"
-    },
-    rightPanel: {
-      visualAsset: "/assets/aistudio/nexila-technologies.webp",
-      cardStyle: "dynamic_3d_render"
-    },
-    features: [
-      "Responsive corporate website layouts",
-      "High-fidelity interface recreation",
-      "Smooth scrolling interactions"
-    ],
-    technologies: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "https://madhusudan04337.github.io/nexila-technologies-clone/",
-    repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git"
-  },
-  {
     id: "006",
     leftPanel: {
       header: "GitLens",
@@ -141,24 +80,24 @@ export const showcaseData = [
     repoUrl: "https://github.com/Madhusudan04337/GitLens.git"
   },
   {
-    id: "007",
+    id: "004",
     leftPanel: {
-      header: "Resume Builder",
-      body: "Developed an AI-powered resume builder featuring modular sections, real-time previews, automated data extraction, and PDF generation for streamlined resume creation.",
-      buttonText: "Build Resume"
+      header: "EV Charge Demand",
+      body: "Developed a predictive analytics platform for electric vehicle charging demand, combining machine learning models and interactive visualizations to explore urban infrastructure requirements.",
+      buttonText: "View Analytics"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/mdk-resume-ai.webp",
-      cardStyle: "dynamic_3d_render"
+      visualAsset: "/assets/aistudio/ev-nexus-forecaster.webp",
+      cardStyle: "motion_graphic_video"
     },
     features: [
-      "Modular resume editing sections",
-      "Real-time document preview",
-      "AI-assisted extraction and PDF export"
+      "EV charging demand visualizations",
+      "Machine learning demand forecasting",
+      "Urban infrastructure data insights"
     ],
-    technologies: ["React", "Claude AI", "PDF export"],
-    liveUrl: "https://mdk-resume-builder.netlify.app/",
-    repoUrl: "https://github.com/Madhusudan04337/resume-builder.git"
+    technologies: ["Python", "Machine learning", "Data visualization"],
+    liveUrl: "https://evvehiclechargedemand-duf5ypvrvpkmt2muqpabcn.streamlit.app/",
+    repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git"
   },
   {
     id: "teen-cabs",
@@ -187,5 +126,66 @@ export const showcaseData = [
     ],
     liveUrl: "https://teen-cabs.netlify.app/",
     repoUrl: "https://github.com/Madhusudan04337/teen-cabs.git"
+  },
+  {
+    id: "005",
+    leftPanel: {
+      header: "Nexila Technologies Clone",
+      body: "Recreated a corporate website with high visual accuracy, responsive layouts, and smooth scrolling interactions, demonstrating practical frontend development and interface implementation skills.",
+      buttonText: "View Clone"
+    },
+    rightPanel: {
+      visualAsset: "/assets/aistudio/nexila-technologies.webp",
+      cardStyle: "dynamic_3d_render"
+    },
+    features: [
+      "Responsive corporate website layouts",
+      "High-fidelity interface recreation",
+      "Smooth scrolling interactions"
+    ],
+    technologies: ["HTML", "CSS", "JavaScript"],
+    liveUrl: "https://madhusudan04337.github.io/nexila-technologies-clone/",
+    repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git"
+  },
+  {
+    id: "001",
+    leftPanel: {
+      header: "Niral-Verse 2K26",
+      body: "Engineered the annual technical fest portal for Hindustan College of Arts & Science, featuring immersive digital visuals, event countdowns, and symposium registration workflows.",
+      buttonText: "View Portal"
+    },
+    rightPanel: {
+      visualAsset: "/assets/aistudio/niral-verse-2k26.webp",
+      cardStyle: "dynamic_3d_render"
+    },
+    features: [
+      "Live event countdown experience",
+      "Online symposium registration workflow",
+      "Immersive digital rain visuals"
+    ],
+    technologies: ["React", "TypeScript", "Web UI"],
+    liveUrl: "https://niral-verse2k26.netlify.app/",
+    repoUrl: "https://github.com/Madhusudan04337/niral-verse2k26.git"
+  },
+  {
+    id: "000",
+    leftPanel: {
+      header: "Mobile Banking App",
+      body: "Designed a modern mobile banking experience in Figma, focusing on intuitive navigation, secure financial workflows, and clean interfaces for seamless digital banking.",
+      buttonText: "Open Prototype",
+      role: "UI/UX"
+    },
+    rightPanel: {
+      visualAsset: "/assets/aistudio/bank-of-baroda-app-redesign.webp",
+      cardStyle: "elevated_white_container",
+      previewText: "Figma Prototype"
+    },
+    features: [
+      "Mobile-first banking interface",
+      "Secure financial task workflows",
+      "Interactive Figma prototyping"
+    ],
+    technologies: ["Figma", "UI/UX", "Prototyping"],
+    liveUrl: "https://www.figma.com/proto/7SjMbQ3jwCh7Zb8uVNfO6k/ACE_Project_Madhusudan?node-id=228-47&p=f&viewport=155%2C263%2C0.06&t=SCQ14BykKy9QqfJS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=233%3A265&page-id=0%3A1"
   }
 ];
