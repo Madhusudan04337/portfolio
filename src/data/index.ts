@@ -1,5 +1,5 @@
 export { skillsData } from './skills';
-export { showcaseData } from './projects';
+export { showcaseData, getProjectBySlug, type ProjectItem } from './projects';
 export { certificationsData } from './certificates';
 export { achievementsData, achievementsCarouselData, type AchievementSlide } from './achievements';
 export { experienceData } from './experience';

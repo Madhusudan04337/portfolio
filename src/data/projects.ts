@@ -1,6 +1,27 @@
-export const showcaseData = [
+export interface ProjectItem {
+  id: string;
+  slug: string;
+  leftPanel: {
+    header: string;
+    body: string;
+    buttonText: string;
+    role?: string;
+  };
+  rightPanel: {
+    visualAsset: string;
+    cardStyle: string;
+    previewText?: string;
+  };
+  features: string[];
+  technologies: string[];
+  liveUrl: string;
+  repoUrl?: string;
+}
+
+export const showcaseData: ProjectItem[] = [
   {
     id: "002",
+    slug: "travello",
     leftPanel: {
       header: "Travello",
       body: "Built a full-stack travel platform using Django and PostgreSQL, featuring destination discovery, secure booking workflows, and an intuitive interface for travel exploration.",
@@ -21,6 +42,7 @@ export const showcaseData = [
   },
   {
     id: "007",
+    slug: "resume-builder",
     leftPanel: {
       header: "Resume Builder",
       body: "Developed an AI-powered resume builder featuring modular sections, real-time previews, automated data extraction, and PDF generation for streamlined resume creation.",
@@ -41,6 +63,7 @@ export const showcaseData = [
   },
   {
     id: "003",
+    slug: "kitchen-vision",
     leftPanel: {
       header: "Kitchen Vision",
       body: "Created an AI-powered culinary assistant using computer vision to identify ingredients, recommend suitable recipes, and deliver an interactive experience through Streamlit.",
@@ -61,6 +84,7 @@ export const showcaseData = [
   },
   {
     id: "006",
+    slug: "gitlens",
     leftPanel: {
       header: "GitLens",
       body: "Built an AI-powered GitHub profile card generator using React and FastAPI, integrating developer data and Gemini AI to create personalized and responsive profile cards.",
@@ -81,6 +105,7 @@ export const showcaseData = [
   },
   {
     id: "004",
+    slug: "ev-charge-demand",
     leftPanel: {
       header: "EV Charge Demand",
       body: "Developed a predictive analytics platform for electric vehicle charging demand, combining machine learning models and interactive visualizations to explore urban infrastructure requirements.",
@@ -101,6 +126,7 @@ export const showcaseData = [
   },
   {
     id: "teen-cabs",
+    slug: "teen-cabs",
     leftPanel: {
       header: "Teen Cabs – Modern Teen Mobility",
       body: "Developed a modern teen mobility platform featuring safety information, parent connectivity, interactive experiences, and responsive interfaces with engaging animations and theme support.",
@@ -129,6 +155,7 @@ export const showcaseData = [
   },
   {
     id: "005",
+    slug: "nexila-technologies-clone",
     leftPanel: {
       header: "Nexila Technologies Clone",
       body: "Recreated a corporate website with high visual accuracy, responsive layouts, and smooth scrolling interactions, demonstrating practical frontend development and interface implementation skills.",
@@ -149,6 +176,7 @@ export const showcaseData = [
   },
   {
     id: "001",
+    slug: "niral-verse-2k26",
     leftPanel: {
       header: "Niral-Verse 2K26",
       body: "Engineered the annual technical fest portal for Hindustan College of Arts & Science, featuring immersive digital visuals, event countdowns, and symposium registration workflows.",
@@ -169,6 +197,7 @@ export const showcaseData = [
   },
   {
     id: "000",
+    slug: "mobile-banking-app",
     leftPanel: {
       header: "Mobile Banking App",
       body: "Designed a modern mobile banking experience in Figma, focusing on intuitive navigation, secure financial workflows, and clean interfaces for seamless digital banking.",
@@ -189,3 +218,8 @@ export const showcaseData = [
     liveUrl: "https://www.figma.com/proto/7SjMbQ3jwCh7Zb8uVNfO6k/ACE_Project_Madhusudan?node-id=228-47&p=f&viewport=155%2C263%2C0.06&t=SCQ14BykKy9QqfJS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=233%3A265&page-id=0%3A1"
   }
 ];
+
+export function getProjectBySlug(slug: string): ProjectItem | undefined {
+  return showcaseData.find((p) => p.slug === slug || p.id === slug);
+}
+

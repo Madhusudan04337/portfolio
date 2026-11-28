@@ -5,7 +5,13 @@ import { MobileFAB } from "./MobileFAB";
 import { BottomNav } from "./BottomNav";
 
 
-export function Layout({ children }: { children: ReactNode }) {
+export function Layout({
+  children,
+  onNavigateHome,
+}: {
+  children: ReactNode;
+  onNavigateHome?: (sectionId?: string) => void;
+}) {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
 
@@ -17,6 +23,13 @@ export function Layout({ children }: { children: ReactNode }) {
       setHidden(false);
     }
   });
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId?: string) => {
+    if (onNavigateHome) {
+      e.preventDefault();
+      onNavigateHome(sectionId);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col px-0.5 selection:bg-[#4A32A1]/20">
@@ -41,21 +54,26 @@ export function Layout({ children }: { children: ReactNode }) {
               className="flex items-center justify-between w-full"
             >
               {/* Logo Left - Separate */}
-              <div className="w-10 h-10 flex items-center justify-center bg-zinc-900 rounded-full overflow-hidden shadow-md ml-1 shrink-0">
+              <a
+                href="/"
+                onClick={(e) => handleLinkClick(e, "hero")}
+                aria-label="Go to homepage"
+                className="w-10 h-10 flex items-center justify-center bg-zinc-900 rounded-full overflow-hidden shadow-md ml-1 shrink-0"
+              >
                 <img src="/logo.webp" alt="Madhusudan" className="w-full h-full object-cover" />
-              </div>
+              </a>
 
               {/* Nav Links + CTA Right - Grouped inside inner pill */}
               <div className="flex items-center gap-3 pr-1">
                 <div className="hidden lg:flex items-center gap-1 bg-zinc-50/80 backdrop-blur-sm rounded-full px-3 py-1.5 border border-zinc-200/60">
-                  <a href="#about" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">About</a>
-                  <a href="#experience" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Experience</a>
-                  <a href="#skills" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Skills</a>
-                  <a href="#projects" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Projects</a>
-                  <a href="#certifications" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Certifications</a>
-                  <a href="#achievements" className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all">Achievements</a>
+                  <a href="#about" onClick={(e) => handleLinkClick(e, "about")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">About</a>
+                  <a href="#experience" onClick={(e) => handleLinkClick(e, "experience")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">Experience</a>
+                  <a href="#skills" onClick={(e) => handleLinkClick(e, "skills")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">Skills</a>
+                  <a href="#projects" onClick={(e) => handleLinkClick(e, "projects")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">Projects</a>
+                  <a href="#certifications" onClick={(e) => handleLinkClick(e, "certifications")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">Certifications</a>
+                  <a href="#achievements" onClick={(e) => handleLinkClick(e, "achievements")} className="px-4 py-2 text-sm font-semibold text-zinc-600 hover:text-zinc-900 hover:bg-white hover:shadow-sm rounded-full transition-all whitespace-nowrap shrink-0">Achievements</a>
                 </div>
-                <a href="#contact" className="px-5 py-2.5 bg-[#4A32A1] text-white rounded-full text-xs font-bold hover:bg-[#3D2887] transition-colors shadow-lg shadow-[#4A32A1]/30 whitespace-nowrap">
+                <a href="#contact" onClick={(e) => handleLinkClick(e, "contact")} className="px-5 py-2.5 bg-[#4A32A1] text-white rounded-full text-xs font-bold hover:bg-[#3D2887] transition-colors shadow-lg shadow-[#4A32A1]/30 whitespace-nowrap shrink-0">
                   Let's talk
                 </a>
               </div>
@@ -68,7 +86,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <p>© {new Date().getFullYear()} Building for the future.</p>
       </footer>
       {/* <MobileFAB /> */}
-      <BottomNav />
+      <BottomNav onNavigateHome={onNavigateHome} />
     </div>
 
   );

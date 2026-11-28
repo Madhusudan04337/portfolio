@@ -10,7 +10,7 @@ const navItems = [
   { label: "Contact", href: "#contact", icon: MessageSquare },
 ];
 
-export function BottomNav() {
+export function BottomNav({ onNavigateHome }: { onNavigateHome?: (sectionId?: string) => void }) {
   const [activeTab, setActiveTab] = useState("#hero");
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -62,7 +62,13 @@ export function BottomNav() {
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setActiveTab(item.href)}
+                  onClick={(e) => {
+                    setActiveTab(item.href);
+                    if (onNavigateHome) {
+                      e.preventDefault();
+                      onNavigateHome(item.href.substring(1));
+                    }
+                  }}
                   className="relative p-3 group"
                 >
                   <item.icon
