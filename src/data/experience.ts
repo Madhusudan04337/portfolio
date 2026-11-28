@@ -6,6 +6,40 @@ import genAiCert from "../assets/internships/GenAI.pdf";
 
 export const experienceData = [
   {
+    id: "exp_07",
+    company: "Forgeit Digital",
+    role: "Web Developer Intern",
+    period: "OCT 2026 – PRESENT | REMOTE",
+    bullets: [
+      "Developed responsive sample website designs for client projects across Boutique, Salon, and Fitness domains, focusing on modern UI and user experience.",
+      "Selected to develop a complete product website, Teen Cabs (Forgeit), contributing to end-to-end website development and real-world product execution."
+    ],
+    themeColor: "oklch(72% 0.16 30)"
+  },
+  {
+    id: "exp_06",
+    company: "AccioJob",
+    role: "MERN Stack Developer Trainee (Ongoing)",
+    period: "Ongoing",
+    bullets: [
+      "Currently enrolled in the AccioJob MERN Stack Developer training program, building full-stack web applications using MongoDB, Express.js, React.js, and Node.js",
+      "Developing backend skills in REST APIs, database management, and application architecture while strengthening problem-solving through guided project work"
+    ],
+    themeColor: "oklch(72% 0.18 160)",
+  },
+  {
+    id: "exp_05",
+    company: "Edunet Foundation",
+    role: "Generative AI Intern",
+    period: "Sep 2025 – Oct 2025 | Virtual",
+    bullets: [
+      "Completed specialized technical training on Generative AI, Large Language Models, and prompt engineering",
+      "Finished self-paced modules on AI implementation and structured project workflows"
+    ],
+    themeColor: "oklch(70% 0.2 280)",
+    certificateLink: genAiCert
+  },
+  {
     id: "exp_01",
     company: "Edunet Foundation",
     role: "Frontend Developer Intern",
@@ -18,20 +52,6 @@ export const experienceData = [
     ],
     themeColor: "oklch(77.75% 0.1003 350.51)",
     certificateLink: edunetFrontendCert
-  },
-  {
-    id: "exp_02",
-    company: "Edunet Foundation",
-    role: "AI & Data Analytics Intern",
-    period: "Jul 2025 – Aug 2025 | Remote (India)",
-    bullets: [
-      "Performed data analysis and basic machine learning tasks using Python",
-      "Assisted in data preprocessing, cleaning, and interpretation of datasets",
-      "Gained practical exposure to AI workflows and analytical problem-solving",
-      "Applied data-driven techniques on real-world datasets"
-    ],
-    themeColor: "oklch(84.16% 0.1169 71.19)",
-    certificateLink: edunetAiCert
   },
   {
     id: "exp_03",
@@ -48,6 +68,20 @@ export const experienceData = [
     certificateLink: uptoskillsCert
   },
   {
+    id: "exp_02",
+    company: "Edunet Foundation",
+    role: "AI & Data Analytics Intern",
+    period: "Jul 2025 – Aug 2025 | Remote (India)",
+    bullets: [
+      "Performed data analysis and basic machine learning tasks using Python",
+      "Assisted in data preprocessing, cleaning, and interpretation of datasets",
+      "Gained practical exposure to AI workflows and analytical problem-solving",
+      "Applied data-driven techniques on real-world datasets"
+    ],
+    themeColor: "oklch(84.16% 0.1169 71.19)",
+    certificateLink: edunetAiCert
+  },
+  {
     id: "exp_04",
     company: "Nexila Technologies",
     role: "Frontend Developer Intern",
@@ -60,28 +94,5 @@ export const experienceData = [
     ],
     themeColor: "oklch(75% 0.15 250)",
     certificateLink: nexillaCert
-  },
-  {
-    id: "exp_05",
-    company: "Edunet Foundation",
-    role: "Generative AI Intern",
-    period: "Sep 2025 – Oct 2025 | Virtual",
-    bullets: [
-      "Completed specialized technical training on Generative AI, Large Language Models, and prompt engineering",
-      "Finished self-paced modules on AI implementation and structured project workflows"
-    ],
-    themeColor: "oklch(70% 0.2 280)",
-    certificateLink: genAiCert
-  },
-  {
-    id: "exp_06",
-    company: "AccioJob",
-    role: "MERN Stack Developer Trainee (Ongoing)",
-    period: "Ongoing",
-    bullets: [
-      "Currently enrolled in the AccioJob MERN Stack Developer training program, building full-stack web applications using MongoDB, Express.js, React.js, and Node.js",
-      "Developing backend skills in REST APIs, database management, and application architecture while strengthening problem-solving through guided project work"
-    ],
-    themeColor: "oklch(72% 0.18 160)",
   }
 ];

@@ -5,7 +5,7 @@ import { experienceData } from "../data";
 import { ExternalLink, ChevronDown } from "lucide-react";
 
 export function Experience() {
-  const [expandedId, setExpandedId] = useState<string | null>(experienceData[0]?.id || null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
