@@ -1,164 +1,191 @@
-
 export const showcaseData = [
   {
     id: "000",
     leftPanel: {
       header: "Mobile Banking App",
-      body: "A UI/UX concept design for a mobile banking experience created in Figma, focused on clean navigation, secure task flows, and a polished, app-first interface.",
+      body: "Designed a modern mobile banking experience in Figma, focusing on intuitive navigation, secure financial workflows, and clean interfaces for seamless digital banking.",
       buttonText: "Open Prototype",
       role: "UI/UX"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_f3c32581.webp",
+      visualAsset: "/assets/aistudio/bank-of-baroda-app-redesign.webp",
       cardStyle: "elevated_white_container",
       previewText: "Figma Prototype"
     },
     features: [
-      'Mobile-first banking flows',
-      'Secure task journeys',
-      'Interactive Figma prototype',
+      "Mobile-first banking interface",
+      "Secure financial task workflows",
+      "Interactive Figma prototyping"
     ],
-    technologies: ['Figma', 'UI/UX', 'Prototyping'],
+    technologies: ["Figma", "UI/UX", "Prototyping"],
     liveUrl: "https://www.figma.com/proto/7SjMbQ3jwCh7Zb8uVNfO6k/ACE_Project_Madhusudan?node-id=228-47&p=f&viewport=155%2C263%2C0.06&t=SCQ14BykKy9QqfJS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=233%3A265&page-id=0%3A1"
   },
   {
     id: "001",
     leftPanel: {
       header: "Niral-Verse 2K26",
-      body: "Engineered the flagship annual tech fest portal for Hindustan College of Arts & Science. Features an immersive digital rain aesthetic, real-time countdowns, and a secure registration gateway for the 2K26 symposium.",
-      buttonText: "View Portal",
+      body: "Engineered the annual technical fest portal for Hindustan College of Arts & Science, featuring immersive digital visuals, event countdowns, and symposium registration workflows.",
+      buttonText: "View Portal"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_81b55a80.webp",
-      cardStyle: "dynamic_3d_render",
+      visualAsset: "/assets/aistudio/niral-verse-2k26.webp",
+      cardStyle: "dynamic_3d_render"
     },
     features: [
-      'Live event countdown',
-      'Symposium registration flow',
-      'Immersive digital rain visuals',
+      "Live event countdown experience",
+      "Online symposium registration workflow",
+      "Immersive digital rain visuals"
     ],
-    technologies: ['React', 'TypeScript', 'Web UI'],
+    technologies: ["React", "TypeScript", "Web UI"],
     liveUrl: "https://niral-verse2k26.netlify.app/",
-    repoUrl: "https://github.com/Madhusudan04337/niral-verse2k26.git",
+    repoUrl: "https://github.com/Madhusudan04337/niral-verse2k26.git"
   },
   {
     id: "002",
     leftPanel: {
       header: "Travello",
-      body: "Architected a full-stack travel platform with the signature 'Let us take you away' experience. Built using Python, Django, and PostgreSQL, featuring secure booking workflows and interactive destination search.",
-      buttonText: "Explore Travello",
+      body: "Built a full-stack travel platform using Django and PostgreSQL, featuring destination discovery, secure booking workflows, and an intuitive interface for travel exploration.",
+      buttonText: "Explore Travello"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_118f032b.webp",
-      cardStyle: "elevated_white_container",
+      visualAsset: "/assets/aistudio/trevello.webp",
+      cardStyle: "elevated_white_container"
     },
     features: [
-      'Destination search',
-      'Secure booking workflow',
-      'PostgreSQL-backed travel platform',
+      "Interactive destination search",
+      "Secure travel booking workflows",
+      "PostgreSQL-powered backend architecture"
     ],
-    technologies: ['Python', 'Django', 'PostgreSQL'],
+    technologies: ["Python", "Django", "PostgreSQL"],
     liveUrl: "https://travello-web.onrender.com/",
-    repoUrl: "https://github.com/Madhusudan04337/travello-web.git",
+    repoUrl: "https://github.com/Madhusudan04337/travello-web.git"
   },
   {
     id: "003",
     leftPanel: {
       header: "Kitchen Vision",
-      body: "AI-powered culinary assistant that utilizes computer vision to identify ingredients and suggest recipes. Built with Streamlit for a seamless, interactive user experience.",
-      buttonText: "Analyze Ingredients",
+      body: "Created an AI-powered culinary assistant using computer vision to identify ingredients, recommend suitable recipes, and deliver an interactive experience through Streamlit.",
+      buttonText: "Analyze Ingredients"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_7578546d.webp",
-      cardStyle: "elevated_white_container",
+      visualAsset: "/assets/aistudio/kitchenvision.webp",
+      cardStyle: "elevated_white_container"
     },
     features: [
-      'Ingredient recognition with computer vision',
-      'AI-powered recipe suggestions',
-      'Interactive Streamlit experience',
+      "Computer vision ingredient recognition",
+      "AI-powered recipe recommendations",
+      "Interactive Streamlit application"
     ],
-    technologies: ['Python', 'Streamlit', 'Computer vision'],
+    technologies: ["Python", "Streamlit", "Computer vision"],
     liveUrl: "https://mdk-kitchen-vision.streamlit.app/",
-    repoUrl: "https://github.com/Madhusudan04337/kitchen-vision.git",
+    repoUrl: "https://github.com/Madhusudan04337/kitchen-vision.git"
   },
   {
     id: "004",
     leftPanel: {
       header: "EV Charge Demand",
-      body: "Advanced data visualization and predictive analytics for Electric Vehicle charging demand. Leverages machine learning models to forecast infrastructure needs based on urban data.",
-      buttonText: "View Analytics",
+      body: "Developed a predictive analytics platform for electric vehicle charging demand, combining machine learning models and interactive visualizations to explore urban infrastructure requirements.",
+      buttonText: "View Analytics"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_05b97254.webp",
-      cardStyle: "motion_graphic_video",
+      visualAsset: "/assets/aistudio/ev-nexus-forecaster.webp",
+      cardStyle: "motion_graphic_video"
     },
     features: [
-      'Charging demand visualizations',
-      'Machine learning forecasts',
-      'Urban infrastructure insights',
+      "EV charging demand visualizations",
+      "Machine learning demand forecasting",
+      "Urban infrastructure data insights"
     ],
-    technologies: ['Python', 'Machine learning', 'Data visualization'],
+    technologies: ["Python", "Machine learning", "Data visualization"],
     liveUrl: "https://evvehiclechargedemand-duf5ypvrvpkmt2muqpabcn.streamlit.app/",
-    repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git",
+    repoUrl: "https://github.com/Madhusudan04337/EV_Vehicle_Charge_Demand.git"
   },
   {
     id: "005",
     leftPanel: {
       header: "Nexila Technologies Clone",
-      body: "A pixel-perfect corporate website clone demonstrating high-fidelity frontend reproduction skills. Features complex layouts, responsive design, and smooth scroll interactions.",
-      buttonText: "View Clone",
+      body: "Recreated a corporate website with high visual accuracy, responsive layouts, and smooth scrolling interactions, demonstrating practical frontend development and interface implementation skills.",
+      buttonText: "View Clone"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_d606e57c.webp",
-      cardStyle: "dynamic_3d_render",
+      visualAsset: "/assets/aistudio/nexila-technologies.webp",
+      cardStyle: "dynamic_3d_render"
     },
     features: [
-      'Responsive corporate layouts',
-      'High-fidelity frontend recreation',
-      'Smooth scroll interactions',
+      "Responsive corporate website layouts",
+      "High-fidelity interface recreation",
+      "Smooth scrolling interactions"
     ],
-    technologies: ['HTML', 'CSS', 'JavaScript'],
+    technologies: ["HTML", "CSS", "JavaScript"],
     liveUrl: "https://madhusudan04337.github.io/nexila-technologies-clone/",
-    repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git",
+    repoUrl: "https://github.com/Madhusudan04337/nexila-technologies-clone.git"
   },
   {
     id: "006",
     leftPanel: {
       header: "GitLens",
-      body: "AI-powered GitHub developer card generator that creates premium, responsive profile cards using GitHub data, Gemini AI, React, FastAPI, and GraphQL APIs.",
-      buttonText: "Generate Card",
+      body: "Built an AI-powered GitHub profile card generator using React and FastAPI, integrating developer data and Gemini AI to create personalized and responsive profile cards.",
+      buttonText: "Generate Card"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_ca04496c.webp",
-      cardStyle: "dynamic_3d_render",
+      visualAsset: "/assets/aistudio/gitlens.webp",
+      cardStyle: "dynamic_3d_render"
     },
     features: [
-      'GitHub profile data and GraphQL',
-      'AI-assisted card generation',
-      'Responsive developer profile cards',
+      "GitHub profile data integration",
+      "AI-assisted profile card generation",
+      "Responsive developer card layouts"
     ],
-    technologies: ['React', 'FastAPI', 'Gemini AI', 'GraphQL'],
+    technologies: ["React", "FastAPI", "Gemini AI", "GraphQL"],
     liveUrl: "https://gitlens-47p7.onrender.com/",
-    repoUrl: "https://github.com/Madhusudan04337/GitLens.git",
+    repoUrl: "https://github.com/Madhusudan04337/GitLens.git"
   },
   {
     id: "007",
     leftPanel: {
       header: "Resume Builder",
-      body: "AI-powered resume builder with real-time preview, modular sections, and PDF export. Built to maintain a consistent resume template and automate data extraction using Claude.",
-      buttonText: "Build Resume",
+      body: "Developed an AI-powered resume builder featuring modular sections, real-time previews, automated data extraction, and PDF generation for streamlined resume creation.",
+      buttonText: "Build Resume"
     },
     rightPanel: {
-      visualAsset: "/assets/aistudio/image_4a3209fe.webp",
-      cardStyle: "dynamic_3d_render",
+      visualAsset: "/assets/aistudio/mdk-resume-ai.webp",
+      cardStyle: "dynamic_3d_render"
     },
     features: [
-      'Modular resume sections',
-      'Real-time document preview',
-      'PDF export and AI-assisted extraction',
+      "Modular resume editing sections",
+      "Real-time document preview",
+      "AI-assisted extraction and PDF export"
     ],
-    technologies: ['React', 'Claude AI', 'PDF export'],
+    technologies: ["React", "Claude AI", "PDF export"],
     liveUrl: "https://mdk-resume-builder.netlify.app/",
-    repoUrl: "https://github.com/Madhusudan04337/resume-builder.git",
+    repoUrl: "https://github.com/Madhusudan04337/resume-builder.git"
   },
+  {
+    id: "teen-cabs",
+    leftPanel: {
+      header: "Teen Cabs – Modern Teen Mobility",
+      body: "Developed a modern teen mobility platform featuring safety information, parent connectivity, interactive experiences, and responsive interfaces with engaging animations and theme support.",
+      buttonText: "Visit Live Website",
+      role: "Web Developer Intern"
+    },
+    rightPanel: {
+      visualAsset: "/assets/aistudio/teen-cabs.webp",
+      cardStyle: "elevated_white_container",
+      previewText: "Teen Cabs Website"
+    },
+    features: [
+      "Teen-focused mobility experience",
+      "Interactive safety and parent connectivity",
+      "Responsive layouts with GSAP animations"
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP"
+    ],
+    liveUrl: "https://teen-cabs.netlify.app/",
+    repoUrl: "https://github.com/Madhusudan04337/teen-cabs.git"
+  }
 ];
