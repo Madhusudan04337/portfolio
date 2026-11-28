@@ -4,6 +4,26 @@ import researchPaperImg from "../assets/achievements/3.webp";
 import researchPaperCert from "../assets/achievements/3c.webp";
 import promptWarsVolunteerImg from "../assets/achievements/v1.webp";
 
+export interface AchievementSlide {
+  project_id: string;
+  type?: "swiper";
+  category: string;
+  left_panel: {
+    header: string;
+    body: string;
+    highlights: string[];
+    organizer: string;
+    location: string;
+    button_text?: string;
+    link?: string;
+    status_label?: string;
+  };
+  right_panel?: {
+    visual_asset: string;
+    card_style: string;
+  };
+}
+
 export const achievementsData = [
   {
     id: "gfg_dsa",
@@ -28,12 +48,20 @@ export const achievementsData = [
   },
 ];
 
-export const achievementsCarouselData = [
+export const achievementsCarouselData: AchievementSlide[] = [
   {
     project_id: "00b",
+    category: "Research & Publication",
     left_panel: {
       header: "Research Paper Presentation – BICET 2026",
-      body: "Presented my first survey paper at BICET 2026, Bharath College of Science and Management, Thanjavur. The paper \"The Evolution of Machine Learning in Diabetes Mellitus\" explores how ML is transforming diabetes prediction and management.",
+      body: "Presented my first survey paper, \"The Evolution of Machine Learning in Diabetes Mellitus,\" exploring how machine learning advances diabetes prediction and clinical management.",
+      highlights: [
+        "First academic survey paper presentation",
+        "Focused on ML-driven diabetes prediction",
+        "Presented at the BICET 2026 conference"
+      ],
+      organizer: "Bharath College of Science & Management",
+      location: "Thanjavur",
       button_text: "View Certificate",
       link: researchPaperCert
     },
@@ -44,10 +72,18 @@ export const achievementsCarouselData = [
   },
   {
     project_id: "00a",
+    category: "Developer Bootcamp",
     left_panel: {
       header: "Build with AI Bootcamp",
-      body: "Attended the Build with AI Bootcamp by Hack2Skill & Google for Developers at Rajalakshmi Institute of Technology, Chennai. Explored Antigravity and built a Sales Report project with real-time data integration.",
-      button_text: "Event Details",
+      body: "Attended the Build with AI Bootcamp by Hack2Skill and Google for Developers, exploring Antigravity and building a Sales Report project with real-time data integration.",
+      highlights: [
+        "Hands-on exploration of Antigravity",
+        "Built a live Sales Report project",
+        "Implemented real-time data integration"
+      ],
+      organizer: "Hack2Skill & Google for Developers",
+      location: "RIT, Chennai",
+      status_label: "Bootcamp Completed"
     },
     right_panel: {
       visual_asset: buildWithAiImg,
@@ -56,9 +92,17 @@ export const achievementsCarouselData = [
   },
   {
     project_id: "000",
+    category: "Cloud & AI Workshop",
     left_panel: {
       header: "Google Cloud AI Labs Series",
-      body: "Attended the Gen AI Exchange by Google Cloud & Hack2Skill in Chennai. Gained hands-on experience with Cloud SQL, MCP Toolbox, and built an AI agent using Google’s ADK.",
+      body: "Participated in the Gen AI Exchange by Google Cloud and Hack2Skill, gaining hands-on experience with Cloud SQL, MCP Toolbox, and building AI agents using Google's ADK.",
+      highlights: [
+        "Hands-on labs with Cloud SQL & MCP Toolbox",
+        "Built an AI agent using Google's ADK",
+        "Completed Gen AI Exchange developer tracks"
+      ],
+      organizer: "Google Cloud & Hack2Skill",
+      location: "Chennai",
       button_text: "View Learning Badge",
       link: "https://developers.google.com/profile/badges/recognitions/learnings?hl=en"
     },
@@ -69,9 +113,18 @@ export const achievementsCarouselData = [
   },
   {
     project_id: "prompt-wars-volunteer",
+    category: "Community & Volunteering",
     left_panel: {
       header: "Prompt Wars Hackathon – Volunteer",
-      body: "Volunteered at the Prompt Wars Hackathon in Chennai alongside Google Developer Groups (GDG) and Hack2Skill teams. Supported event operations, managed participant check-ins, and helped ensure smooth event coordination while engaging with the developer community.",
+      body: "Volunteered at the Prompt Wars Hackathon alongside Google Developer Groups (GDG) and Hack2Skill teams to support event operations, participant check-ins, and coordination.",
+      highlights: [
+        "Supported live hackathon event operations",
+        "Managed participant check-ins and flow",
+        "Collaborated with GDG & Hack2Skill teams"
+      ],
+      organizer: "GDG & Hack2Skill",
+      location: "Chennai",
+      status_label: "Community Volunteer"
     },
     right_panel: {
       visual_asset: promptWarsVolunteerImg,
@@ -81,9 +134,17 @@ export const achievementsCarouselData = [
   {
     project_id: "swiper-slide",
     type: "swiper",
+    category: "Competitive Milestone",
     left_panel: {
       header: "Symposium Victories",
-      body: "9 Symposiums • 12 Winnings. A track record of excellence in technical symposiums and coding competitions across the state.\n\nAll achievements are professionally verified. Visit my LinkedIn profile to explore the full journey and event highlights.",
+      body: "Achieved 12 winnings across 9 technical symposiums and coding competitions, with every milestone documented and professionally verified.",
+      highlights: [
+        "9 technical symposiums participated",
+        "12 verified competition winnings",
+        "Consistent coding & tech event excellence"
+      ],
+      organizer: "Inter-Collegiate Symposiums",
+      location: "Statewide",
       button_text: "View LinkedIn Post",
       link: "https://www.linkedin.com/in/madhu-sudan-0006a429a/"
     }

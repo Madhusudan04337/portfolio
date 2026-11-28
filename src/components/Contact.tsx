@@ -51,7 +51,7 @@ export function Contact() {
   };
 
   return (
-    <section className="py-20 px-6 bg-[#FAFAFA] relative overflow-hidden" id="contact">
+    <section className="pt-16 pb-0 md:py-20 px-6 bg-[#FAFAFA] relative overflow-hidden" id="contact">
       {/* Background Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl opacity-50" />
@@ -60,7 +60,7 @@ export function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start">
 
           {/* Left Column: Creative Header & Info */}
           <div className="lg:w-5/12 space-y-12">
@@ -141,28 +141,28 @@ export function Contact() {
             </motion.div>
           </div>
 
-          {/* Right Column: Premium Form Card */}
+          {/* Right Column: Attached on mobile, Premium Form Card on desktop */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="lg:w-7/12 w-full relative"
           >
-            {/* Decorative Card Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-tr from-[#4A32A1]/20 to-orange-100/30 rounded-[32px] blur-xl opacity-50" />
+            {/* Decorative Card Glow (desktop only) */}
+            <div className="hidden md:block absolute -inset-1 bg-gradient-to-tr from-[#4A32A1]/20 to-orange-100/30 rounded-[32px] blur-xl opacity-50" />
 
-            <div className="relative bg-white/80 backdrop-blur-xl border border-white rounded-[32px] shadow-2xl p-6 md:p-10">
-              <div className="mb-8">
+            <div className="relative -mx-6 px-6 pt-8 pb-10 bg-zinc-100/75 rounded-none border-0 shadow-none md:mx-0 md:p-10 md:bg-white/80 md:backdrop-blur-xl md:border md:border-white md:rounded-[32px] md:shadow-2xl">
+              <div className="mb-7 md:mb-8">
                 <h3 className="text-xl md:text-2xl font-display font-bold text-zinc-900">Send Me a Message</h3>
                 <div className="h-1.5 w-10 bg-[#4A32A1] rounded-full mt-3" />
               </div>
 
-              <form ref={form} onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form ref={form} onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
                   {/* Name */}
                   <div className="group relative">
-                    <label className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
+                    <label className="block mb-1.5 ml-1 text-[10px] md:text-xs font-bold text-zinc-500 md:text-zinc-400 uppercase tracking-widest md:mb-0 md:ml-0 md:absolute md:-top-2.5 md:left-4 md:bg-white md:px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Name</label>
                     <div className="relative">
                       <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                       <input
@@ -170,14 +170,14 @@ export function Contact() {
                         type="text"
                         required
                         placeholder="John Doe"
-                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                        className="w-full bg-white/85 md:bg-transparent border-0 md:border-2 md:border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 md:placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 md:focus:ring-0 md:focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                       />
                     </div>
                   </div>
 
                   {/* Email */}
                   <div className="group relative">
-                    <label className="text-[10px] md:text-xs font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
+                    <label className="block mb-1.5 ml-1 text-[10px] md:text-xs font-bold text-zinc-500 md:text-zinc-400 uppercase tracking-widest md:mb-0 md:ml-0 md:absolute md:-top-2.5 md:left-4 md:bg-white md:px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Email</label>
                     <div className="relative">
                       <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                       <input
@@ -185,7 +185,7 @@ export function Contact() {
                         type="email"
                         required
                         placeholder="john@example.com"
-                        className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                        className="w-full bg-white/85 md:bg-transparent border-0 md:border-2 md:border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 md:placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 md:focus:ring-0 md:focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                       />
                     </div>
                   </div>
@@ -193,7 +193,7 @@ export function Contact() {
 
                 {/* Subject */}
                 <div className="group relative">
-                  <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Subject</label>
+                  <label className="block mb-1.5 ml-1 text-[10px] md:text-[11px] font-bold text-zinc-500 md:text-zinc-400 uppercase tracking-widest md:mb-0 md:ml-0 md:absolute md:-top-2.5 md:left-4 md:bg-white md:px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Subject</label>
                   <div className="relative">
                     <Type className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                     <input
@@ -201,21 +201,21 @@ export function Contact() {
                       type="text"
                       required
                       placeholder="Collaboration inquiry"
-                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
+                      className="w-full bg-white/85 md:bg-transparent border-0 md:border-2 md:border-zinc-100 rounded-2xl pl-12 pr-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-400 md:placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 md:focus:ring-0 md:focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300"
                     />
                   </div>
                 </div>
 
                 {/* Message */}
                 <div className="group relative">
-                  <label className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest absolute -top-2.5 left-4 bg-white px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Message</label>
+                  <label className="block mb-1.5 ml-1 text-[10px] md:text-[11px] font-bold text-zinc-500 md:text-zinc-400 uppercase tracking-widest md:mb-0 md:ml-0 md:absolute md:-top-2.5 md:left-4 md:bg-white md:px-2 z-10 transition-colors group-focus-within:text-[#4A32A1]">Message</label>
                   <div className="relative">
                     <MessageSquare className="absolute left-4 top-5 w-4 h-4 text-zinc-400 group-focus-within:text-[#4A32A1] transition-colors" />
                     <textarea
                       name="message"
                       required
                       placeholder="Tell me about your project..."
-                      className="w-full bg-transparent border-2 border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-sm text-zinc-900 placeholder:text-zinc-300 focus:outline-none focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300 min-h-[140px] resize-none"
+                      className="w-full bg-white/85 md:bg-transparent border-0 md:border-2 md:border-zinc-100 rounded-2xl pl-12 pr-4 py-4 text-sm text-zinc-900 placeholder:text-zinc-400 md:placeholder:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-[#4A32A1]/20 md:focus:ring-0 md:focus:border-[#4A32A1]/40 focus:bg-white transition-all duration-300 min-h-[140px] resize-none"
                     />
                   </div>
                 </div>

@@ -1,0 +1,291 @@
+.ach-carousel {
+  --ach-stage-h: clamp(540px, 76vh, 720px);
+  --ach-margin-y: 20px;
+  --ach-margin-x: 20px;
+  --ach-half-h: calc((var(--ach-stage-h) - (var(--ach-margin-y) * 2)) / 2);
+  --ach-spin-dur: 1s;
+
+  position: relative;
+  width: 100%;
+  height: var(--ach-stage-h);
+  overflow: hidden;
+  perspective: 50vw;
+  perspective-origin: 50% 50%;
+  background: #ffffff;
+}
+
+.js-transitions-disabled,
+.js-transitions-disabled * {
+  transition: none !important;
+}
+
+.ach-carousel__control {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+  height: fit-content;
+  background: #ffffff;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  gap: 2px;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.08);
+  border-radius: 12px 0 0 12px;
+}
+
+.ach-carousel__dot {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 30px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ach-carousel__dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.22);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.ach-carousel__dot:hover::before {
+  background: rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.ach-carousel__dot.active::before,
+.ach-carousel__dot.active:hover::before {
+  background: rgba(0, 0, 0, 0.72);
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.ach-carousel__arrow {
+  width: 32px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  color: rgba(0, 0, 0, 0.45);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ach-carousel__arrow:hover {
+  color: #18181b;
+}
+
+.ach-carousel__stage {
+  position: absolute;
+  top: var(--ach-margin-y);
+  bottom: var(--ach-margin-y);
+  left: var(--ach-margin-x);
+  right: var(--ach-margin-x);
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(-1 * var(--ach-half-h)));
+}
+
+.ach-spinner {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: auto;
+  margin: auto;
+  transform-style: preserve-3d;
+  transition: transform var(--ach-spin-dur) cubic-bezier(0.45, 0.05, 0.25, 1);
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  transform: rotateX(0deg);
+}
+
+.ach-spinner--right {
+  right: 0;
+  left: auto;
+}
+
+.ach-carousel__stage.js-spin-fwd .ach-spinner--left {
+  transform: rotateX(-90deg);
+}
+
+.ach-carousel__stage.js-spin-bwd .ach-spinner--left {
+  transform: rotateX(90deg);
+}
+
+.ach-carousel__stage.js-spin-fwd .ach-spinner--right {
+  transform: rotateX(90deg);
+}
+
+.ach-carousel__stage.js-spin-bwd .ach-spinner--right {
+  transform: rotateX(-90deg);
+}
+
+.ach-spinner__face {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.ach-spinner__face.js-active {
+  display: block;
+  transform: translateZ(var(--ach-half-h));
+}
+
+.ach-spinner__face.js-next {
+  display: block;
+}
+
+.ach-spinner--left .ach-spinner__face.js-next {
+  transform: rotateX(90deg) translateZ(var(--ach-half-h));
+}
+
+.ach-spinner--right .ach-spinner__face.js-next {
+  transform: rotateX(270deg) translateZ(var(--ach-half-h));
+}
+
+.ach-carousel__stage.js-spin-bwd .ach-spinner--left .ach-spinner__face.js-next {
+  transform: rotateX(-90deg) translateZ(var(--ach-half-h));
+}
+
+.ach-carousel__stage.js-spin-bwd .ach-spinner--right .ach-spinner__face.js-next {
+  transform: rotateX(-270deg) translateZ(var(--ach-half-h));
+}
+
+.ach-content {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.ach-spinner--right .ach-content {
+  left: -100%;
+}
+
+.ach-content__left,
+.ach-content__right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.ach-content__left {
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.ach-content__left--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(0, 0, 0, 0.58) 100%
+  );
+  pointer-events: none;
+}
+
+.ach-content__left-title {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: #ffffff;
+}
+
+.ach-content__left-title h1 {
+  font-family: var(--font-display, "Outfit", sans-serif);
+  font-size: clamp(2.1rem, 4.2vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  margin: 0;
+}
+
+.ach-content__left-title span {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-family: var(--font-mono, monospace);
+  font-size: clamp(0.68rem, 0.95vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+}
+
+.ach-content__right {
+  right: 0;
+  left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ach-content__main {
+  position: relative;
+  z-index: 2;
+  max-width: 540px;
+  padding: 0 clamp(2.5rem, 6vw, 5.5rem) 0 clamp(2.5rem, 6vw, 5rem);
+  color: #ffffff;
+  text-align: left;
+}
+
+.ach-content__index {
+  position: absolute;
+  right: -0.04em;
+  bottom: -0.14em;
+  margin: 0;
+  font-family: var(--font-display, "Outfit", sans-serif);
+  font-size: clamp(10rem, 24vh, 17rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ach-spinner {
+    --ach-spin-dur: 0.01s;
+  }
+}

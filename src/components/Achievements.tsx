@@ -1,7 +1,7 @@
 import { AnimatePresence, animate, motion, useInView, useMotionValue, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { achievementsData, achievementsCarouselData } from "../data";
-import { MapPin, Calendar, ArrowRight } from "lucide-react";
+import { MapPin, Calendar, ArrowRight, ArrowLeft, Award, CheckCircle2 } from "lucide-react";
 import { SymposymCardSwiper } from "./SymposymCardSwiper";
 
 function preloadImage(src?: string) {
@@ -76,6 +76,10 @@ function AchievementCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  const goTo = (index: number) => {
+    setCurrentIndex((index + achievementsCarouselData.length) % achievementsCarouselData.length);
+  };
+
   useEffect(() => {
     if (isPaused) return;
 
@@ -90,8 +94,8 @@ function AchievementCarousel() {
       (item) => item.type !== "swiper" && item.right_panel?.visual_asset
     );
 
-    preloadImage(imageSlides[0]?.right_panel.visual_asset);
-    preloadImage(imageSlides[1]?.right_panel.visual_asset);
+    preloadImage(imageSlides[0]?.right_panel?.visual_asset);
+    preloadImage(imageSlides[1]?.right_panel?.visual_asset);
   }, []);
 
   useEffect(() => {
@@ -107,87 +111,113 @@ function AchievementCarousel() {
 
   return (
     <div
-      className="w-full mt-24 relative flex flex-col items-center px-4"
+      className="w-full mt-24 relative flex flex-col items-center px-2 sm:px-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="w-full max-w-6xl relative h-[750px] md:h-[600px] bg-white rounded-[32px] border border-zinc-200/60 shadow-[0_8px_40px_rgb(0,0,0,0.04)] overflow-hidden">
+      <div className="w-full max-w-6xl relative md:h-[580px] bg-white rounded-[32px] border border-zinc-200/60 shadow-[0_8px_40px_rgb(0,0,0,0.04)] overflow-hidden">
 
         <AnimatePresence mode="wait">
-          <motion.div 
-            key={currentIndex} 
-            className={`absolute inset-0 grid grid-cols-1 ${currentData.type === 'swiper' ? 'md:grid-cols-[35%_65%]' : 'md:grid-cols-2'}`}
+          <motion.div
+            key={currentIndex}
+            className="relative md:absolute md:inset-0 grid grid-cols-1 md:grid-cols-2 h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.45 }}
           >
-            {/* Left Panel */}
-            <motion.div 
-              initial={{ x: "-150%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ duration: 1.5, ease: customEase }}
-              className={`p-6 md:p-10 flex flex-col h-full order-2 md:order-1 ${
-                currentData.type === 'swiper' 
-                  ? 'justify-start pt-8 md:pt-32 items-start text-left' 
-                  : 'justify-center'
-              }`}
+            {/* Left Panel — Uniform structure and alignment across all slides */}
+            <motion.div
+              initial={{ x: -30, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6, ease: customEase }}
+              className="p-6 sm:p-8 md:p-10 flex flex-col justify-between h-full order-2 md:order-1 text-left"
             >
-              <motion.h4 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.0, ease: customEase }}
-                className="text-2xl md:text-4xl font-display font-bold text-zinc-900 mb-6 leading-tight"
-              >
-                {currentData.left_panel.header}
-              </motion.h4>
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: customEase }}
-                className="text-zinc-600 text-sm md:text-base leading-relaxed mb-8 whitespace-pre-line max-w-md mx-0"
-              >
-                {currentData.left_panel.body}
-              </motion.p>
-              {currentData.left_panel.link && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4, ease: customEase }}
-                >
-                  <a 
-                    href={currentData.left_panel.link} 
-                    target="_blank" 
+              {/* Top Bar: Category & Slide Counter */}
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-[11px] font-mono font-semibold uppercase tracking-wider text-[#5E35B1] bg-[#5E35B1]/10 border border-[#5E35B1]/15">
+                  {currentData.category}
+                </span>
+                <span className="text-xs font-mono text-zinc-400 tabular-nums">
+                  <span className="text-zinc-900 font-semibold">{String(currentIndex + 1).padStart(2, "0")}</span>
+                  {" / "}
+                  {String(achievementsCarouselData.length).padStart(2, "0")}
+                </span>
+              </div>
+
+              {/* Middle Content: Title, Description, Highlights, Metadata */}
+              <div className="flex-1 flex flex-col justify-center space-y-5">
+                <h4 className="text-2xl md:text-3xl font-display font-bold text-zinc-900 leading-snug tracking-tight">
+                  {currentData.left_panel.header}
+                </h4>
+
+                <p className="text-zinc-600 text-sm md:text-[15px] leading-relaxed max-w-lg">
+                  {currentData.left_panel.body}
+                </p>
+
+                <ul className="space-y-2 pt-1">
+                  {currentData.left_panel.highlights.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-700">
+                      <CheckCircle2 className="w-4 h-4 text-[#5E35B1] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2 text-xs text-zinc-500 font-mono">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5 text-[#5E35B1]" />
+                    {currentData.left_panel.organizer}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-[#5E35B1]" />
+                    {currentData.left_panel.location}
+                  </span>
+                </div>
+              </div>
+
+              {/* Bottom Action Slot — Consistent across every slide */}
+              <div className="pt-6 mt-6 border-t border-zinc-100 flex items-center justify-between gap-4">
+                {currentData.left_panel.link ? (
+                  <a
+                    href={currentData.left_panel.link}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-[#5E35B1] text-white px-6 py-2.5 rounded-full text-xs font-semibold transition-all shadow-lg hover:shadow-purple-200"
+                    className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-[#5E35B1] text-white px-5 py-2.5 rounded-full text-xs font-semibold transition-all shadow-md hover:shadow-purple-200"
                   >
-                    {currentData.left_panel.button_text} <ArrowRight className="w-4 h-4" />
+                    {currentData.left_panel.button_text}
+                    <ArrowRight className="w-4 h-4" />
                   </a>
-                </motion.div>
-              )}
+                ) : (
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold text-zinc-600 bg-zinc-100 border border-zinc-200/80">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#5E35B1]" />
+                    {currentData.left_panel.status_label ?? "Verified Milestone"}
+                  </span>
+                )}
+              </div>
             </motion.div>
 
-            {/* Right Panel */}
-            <motion.div 
-              initial={{ x: "150%", scale: 0.8, opacity: 0 }}
-              animate={{ x: "0%", scale: 1, opacity: 1 }}
-              transition={{ duration: 0.9, delay: 0.3, ease: customEase }}
-              className="relative h-full w-full p-4 md:p-6 order-1 md:order-2"
+            {/* Right Panel — Uniform visual stage */}
+            <motion.div
+              initial={{ x: 30, scale: 0.96, opacity: 0 }}
+              animate={{ x: 0, scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: customEase }}
+              className="relative h-[290px] sm:h-[340px] md:h-full w-full p-4 md:p-6 order-1 md:order-2"
             >
-              <div className="w-full h-full rounded-[32px] bg-zinc-50 border border-zinc-100 relative flex items-center justify-center">
+              <div className="w-full h-full rounded-[24px] bg-zinc-50 border border-zinc-100 relative flex items-center justify-center overflow-hidden">
                 {currentData.type === "swiper" ? (
-                   <SymposymCardSwiper standalone={false} />
+                  <div className="w-full h-full p-2 sm:p-4 flex items-center justify-center">
+                    <SymposymCardSwiper standalone={false} />
+                  </div>
                 ) : (
-                  <div className="w-full h-full p-6">
-                    <img 
-                      src={currentData.right_panel.visual_asset} 
+                  <div className="w-full h-full p-4 md:p-6">
+                    <img
+                      src={currentData.right_panel?.visual_asset}
                       alt={currentData.left_panel.header}
                       loading="eager"
                       decoding="async"
                       fetchPriority="high"
-                      width={1200}
-                      height={900}
-                      className="w-full h-full object-cover rounded-2xl shadow-xl"
+                      className="w-full h-full object-cover rounded-2xl shadow-lg"
                     />
                   </div>
                 )}
@@ -197,16 +227,37 @@ function AchievementCarousel() {
         </AnimatePresence>
       </div>
 
-      {/* Progress Trackers */}
-      <div className="flex gap-3 mt-8">
-        {achievementsCarouselData.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`h-2 transition-all duration-500 rounded-full ${idx === currentIndex ? "w-8 bg-[#5E35B1]" : "w-2 bg-zinc-300 hover:bg-zinc-400"}`}
-            aria-label={`Jump to slide ${idx + 1}`}
-          />
-        ))}
+      {/* Controls & Progress Trackers */}
+      <div className="flex items-center gap-5 mt-8">
+        <button
+          type="button"
+          onClick={() => goTo(currentIndex - 1)}
+          aria-label="Previous achievement"
+          className="w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-600 hover:text-white hover:bg-[#5E35B1] hover:border-[#5E35B1] transition-colors shadow-xs"
+        >
+          <ArrowLeft className="w-4 h-4" />
+        </button>
+
+        <div className="flex gap-2.5 items-center">
+          {achievementsCarouselData.map((item, idx) => (
+            <button
+              key={item.project_id}
+              type="button"
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-2 transition-all duration-500 rounded-full ${idx === currentIndex ? "w-8 bg-[#5E35B1]" : "w-2 bg-zinc-300 hover:bg-zinc-400"}`}
+              aria-label={`Jump to ${item.left_panel.header}`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => goTo(currentIndex + 1)}
+          aria-label="Next achievement"
+          className="w-9 h-9 rounded-full border border-zinc-200 bg-white flex items-center justify-center text-zinc-600 hover:text-white hover:bg-[#5E35B1] hover:border-[#5E35B1] transition-colors shadow-xs"
+        >
+          <ArrowRight className="w-4 h-4" />
+        </button>
       </div>
     </div>
   );
